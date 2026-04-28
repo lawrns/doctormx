@@ -161,12 +161,12 @@ export function HeroSection({ trustData }: HeroSectionProps) {
             </div>
 
             <h1 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-white">
-              Tu salud merece una recomendación{' '}
-              <span className="font-serif italic tracking-[-0.04em] text-primary">confiable.</span>
+              No sabes si es estrés, migraña o algo peor.{' '}
+              <span className="font-serif italic tracking-[-0.04em] text-primary">Dr. Simeón te orienta en 2 minutos.</span>
             </h1>
 
             <p className="mt-6 max-w-[42rem] text-base leading-7 text-white/74 sm:text-lg">
-              Describe tus síntomas a Dr. Simeón, descubre la especialidad correcta y agenda con médicos verificados en minutos.
+              Describe tus síntomas. Dr. Simeón identifica la especialidad correcta. Te mostramos 3 médicos verificados con precio, cédula y horarios reales. Primera consulta desde $500 MXN.
             </p>
 
             <div className="mt-7 hidden gap-3 sm:grid sm:grid-cols-3">
@@ -209,6 +209,12 @@ export function HeroSection({ trustData }: HeroSectionProps) {
                 <Link href="/doctors">
                   <Search className="h-4 w-4" aria-hidden="true" />
                   Ver médicos
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="w-full sm:w-auto border-white/25 text-white hover:bg-white/10">
+                <Link href="/sintomas">
+                  <Stethoscope className="h-4 w-4" aria-hidden="true" />
+                  ¿Cuál especialista necesito?
                 </Link>
               </Button>
             </div>

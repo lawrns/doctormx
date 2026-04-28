@@ -91,22 +91,22 @@ const comparisonRows = [
 
 const planComparison = [
   {
-    name: 'Starter',
-    price: '$499',
+    name: 'Esencial',
+    price: '$790',
     cadence: 'MXN/mes',
     cta: 'Comenzar gratis',
     href: '/auth/register?role=doctor',
     features: ['Perfil profesional', 'Reserva de citas', '30 pacientes WhatsApp', 'Soporte por correo'],
   },
   {
-    name: 'Pro',
-    price: '$999',
+    name: 'Profesional',
+    price: '$1,490',
     cadence: 'MXN/mes',
     cta: 'Comenzar gratis',
     href: '/auth/register?role=doctor',
     featured: true,
     features: [
-      'Todo en Starter',
+      'Todo en Esencial',
       'AI Copilot (50 consultas)',
       '100 pacientes WhatsApp',
       'Posicionamiento prioritario',
@@ -114,13 +114,13 @@ const planComparison = [
     ],
   },
   {
-    name: 'Elite',
-    price: '$1,999',
+    name: 'Premium',
+    price: '$2,990',
     cadence: 'MXN/mes',
     cta: 'Comenzar gratis',
     href: '/auth/register?role=doctor',
     features: [
-      'Todo en Pro',
+      'Todo en Profesional',
       'AI Copilot ilimitado',
       'Imágenes ilimitadas',
       'Listado destacado',
@@ -166,9 +166,9 @@ export default function ForDoctorsPage() {
   const [consultPrice, setConsultPrice] = useState(600)
 
   const monthlyRevenue = patientCount * consultPrice
-  const netRevenue = monthlyRevenue - 499
+  const netRevenue = monthlyRevenue - 790
   const doctoraliaCost = 2400
-  const annualSavings = (doctoraliaCost * 12) - (499 * 12)
+  const annualSavings = (doctoraliaCost * 12) - (790 * 12)
   const formatMxn = (amount: number) => `$${amount.toLocaleString('es-MX')}`
 
   return (
@@ -189,12 +189,26 @@ export default function ForDoctorsPage() {
                 Para médicos mexicanos
               </p>
               <h1 className="mt-4 font-display text-4xl font-semibold leading-[0.98] tracking-[-0.04em] text-foreground md:text-5xl lg:text-[3.4rem]">
-                Médicos verificados en Doctor.mx reciben 3x más pacientes.
+                Te enviamos 10 pacientes en tus primeros 30 días. Si no llegan, te regalamos 6 meses gratis.
               </h1>
               <p className="mt-4 max-w-xl text-base leading-7 text-muted-foreground">
                 Únete a la plataforma de telemedicina #1 para médicos mexicanos. Perfil
                 profesional, pacientes por WhatsApp, y IA para tus notas clínicas.
               </p>
+
+              <div className="mt-5 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3">
+                {[
+                  '10 pacientes garantizados',
+                  '6 meses gratis si no cumplimos',
+                  '14 días sin tarjeta',
+                  'Cancela cuando quieras',
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-1.5 rounded-lg bg-[hsl(var(--trust-soft))] px-3 py-2">
+                    <CheckCircle className="h-4 w-4 shrink-0 text-[hsl(var(--trust))]" />
+                    <span className="text-xs font-semibold text-foreground">{item}</span>
+                  </div>
+                ))}
+              </div>
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <Button asChild size="lg" variant="primary">
@@ -283,7 +297,7 @@ export default function ForDoctorsPage() {
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[hsl(var(--interactive))]">Tu ganancia neta</p>
                       <p className="mt-1 font-display text-2xl font-semibold text-[hsl(var(--interactive))]">{formatMxn(netRevenue)}</p>
-                      <p className="mt-0.5 text-xs text-muted-foreground">Después del plan Starter ($499/mes)</p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">Después del plan Esencial ($790/mes)</p>
                     </div>
                     <CreditCard className="h-8 w-8 text-primary/60" />
                   </div>
@@ -345,7 +359,7 @@ export default function ForDoctorsPage() {
                 precios hasta 80% menores.
               </p>
               <div className="mt-4 flex items-baseline gap-2">
-                <span className="font-display text-3xl font-semibold text-primary">$499</span>
+                <span className="font-display text-3xl font-semibold text-primary">$790</span>
                 <span className="text-sm text-muted-foreground line-through">$2,400</span>
                 <span className="text-xs text-muted-foreground">/mes</span>
               </div>

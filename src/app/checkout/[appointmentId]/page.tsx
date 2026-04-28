@@ -290,6 +290,18 @@ export default function CheckoutPage({
       </header>
 
       <main className="mx-auto grid max-w-6xl gap-6 px-4 py-8 sm:px-6 lg:grid-cols-[minmax(0,0.95fr)_minmax(360px,0.65fr)] lg:px-8">
+        {appointmentPayable && holdRemainingMs !== null && holdRemainingMs > 0 && (
+          <div className="col-span-full mb-2 flex items-center justify-between gap-3 rounded-[var(--public-radius-control)] border border-amber-200 bg-amber-50 px-4 py-3 dark:border-amber-800/40 dark:bg-amber-950/20">
+            <div className="flex items-center gap-2">
+              <CalendarClock className="h-4 w-4 shrink-0 text-amber-600 dark:text-amber-400" />
+              <p className="text-sm font-semibold text-amber-800 dark:text-amber-200">
+                Tu cita está reservada por{' '}
+                <span className="tabular-nums">{formatRemainingTime(holdRemainingMs)}</span>
+                {' '}minutos — completa el pago para confirmarla.
+              </p>
+            </div>
+          </div>
+        )}
         <section className="space-y-6">
           <div className="border-b border-[hsl(var(--public-border)/0.78)] pb-5">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--brand-ocean))]">
@@ -659,6 +671,20 @@ export default function CheckoutPage({
                 )}
               </div>
             )}
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-3 border-t border-[hsl(var(--public-border)/0.5)] pt-4 text-xs text-[hsl(var(--public-muted))]">
+              <span className="flex items-center gap-1.5">
+                <LockKeyhole className="h-3.5 w-3.5 text-[hsl(var(--trust))]" />
+                Pago seguro SSL
+              </span>
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="h-3.5 w-3.5 text-[hsl(var(--trust))]" />
+                Cédula verificada
+              </span>
+              <span className="flex items-center gap-1.5">
+                <CheckCircle2 className="h-3.5 w-3.5 text-[hsl(var(--trust))]" />
+                Cancelación gratuita hasta 24h antes
+              </span>
+            </div>
           </div>
 
           {error && (

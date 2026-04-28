@@ -81,11 +81,11 @@ type DoctorPlan = {
 const doctorPlans: DoctorPlan[] = [
   {
     id: 'starter',
-    name: 'Starter',
-    monthlyPrice: 499,
-    annualPrice: 415,
+    name: 'Esencial',
+    monthlyPrice: 790,
+    annualPrice: 657,
     cadence: 'MXN / mes',
-    description: 'Perfil profesional, reserva de citas y visibilidad para empezar a recibir pacientes.',
+    description: 'Perfil profesional, reserva de citas y visibilidad para empezar a recibir pacientes. Sin AI Copilot.',
     cta: 'Comenzar prueba gratis',
     href: '/auth/register?role=doctor',
     features: [
@@ -106,16 +106,16 @@ const doctorPlans: DoctorPlan[] = [
   },
   {
     id: 'pro',
-    name: 'Pro',
-    monthlyPrice: 999,
-    annualPrice: 832,
+    name: 'Profesional',
+    monthlyPrice: 1490,
+    annualPrice: 1237,
     cadence: 'MXN / mes',
-    description: 'Todo en Starter más IA para notas clínicas y mayor alcance con pacientes.',
+    description: 'Todo en Esencial más IA para notas clínicas, análisis de imágenes y mayor alcance con pacientes.',
     cta: 'Comenzar prueba gratis',
     href: '/auth/register?role=doctor',
     featured: true,
     features: [
-      'Todo en Starter',
+      'Todo en Esencial',
       'AI Copilot (50 consultas)',
       '100 pacientes por WhatsApp',
       'Posicionamiento prioritario',
@@ -130,11 +130,11 @@ const doctorPlans: DoctorPlan[] = [
   },
   {
     id: 'elite',
-    name: 'Elite',
-    monthlyPrice: 1999,
-    annualPrice: 1665,
+    name: 'Premium',
+    monthlyPrice: 2990,
+    annualPrice: 2482,
     cadence: 'MXN / mes',
-    description: 'Máxima visibilidad, IA ilimitada y herramientas para clínicas exigentes.',
+    description: 'Máxima visibilidad, IA ilimitada y herramientas avanzadas para consultorios de alto volumen.',
     cta: 'Comenzar prueba gratis',
     href: '/auth/register?role=doctor',
     features: [
@@ -400,9 +400,9 @@ export default function PricingPage() {
                 <TableHeader>
                   <TableRow>
                     <TableHead className="w-[280px]">Funcionalidad</TableHead>
-                    <TableHead className="text-center">Starter</TableHead>
-                    <TableHead className="text-center bg-primary/5">Pro</TableHead>
-                    <TableHead className="text-center">Elite</TableHead>
+                    <TableHead className="text-center">Esencial</TableHead>
+                    <TableHead className="text-center bg-primary/5">Profesional</TableHead>
+                    <TableHead className="text-center">Premium</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>

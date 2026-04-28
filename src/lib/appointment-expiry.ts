@@ -120,5 +120,57 @@ export async function expireStalePendingPaymentAppointments(
     )
   )
 
+  // Schedule abandoned booking recovery sequences
+  try {
+    const { sendAbandonedBooking15m, sendAbandonedBooking24h } = await import('./whatsapp-notifications')
+
+    for (const appointment of appointments) {
+      // Get patient phone + name
+      const { data: patientData } = await supabase
+        .from('appointments')
+        .select('patient_id, start_ts, doctor_id')
+        .eq('id', appointment.id)
+        .single()
+
+      if (!patientData?.patient_id) continue
+
+      const { data: profile } = await supabase
+        .from('profiles')
+        .select('full_name, phone')
+        .eq('id', patientData.patient_id)
+        .single()
+
+      const { data: doctorData } = await supabase
+        .from('profiles')
+        .select('full_name')
+        .eq('id', patientData.doctor_id ?? '')
+        .single()
+
+      const phone = profile?.phone
+      if (!phone) continue
+
+      const patientName = profile?.full_name?.split(' ')[0] || ''
+      const doctorName = doctorData?.full_name || ''
+      const apptDate = patientData?.start_ts
+        ? new Date(patientData.start_ts).toLocaleDateString('es-MX', { weekday: 'long', day: 'numeric', month: 'long' })
+        : ''
+      const apptTime = patientData?.start_ts
+        ? new Date(patientData.start_ts).toLocaleTimeString('es-MX', { hour: '2-digit', minute: '2-digit' })
+        : ''
+      const checkoutLink = `https://doctor.mx/checkout/${appointment.id}`
+      const doctorsLink = `https://doctor.mx/doctors`
+
+      // Send 15-min recovery (immediate, since we're already past expiry)
+      sendAbandonedBooking15m(phone, patientName, doctorName, apptDate, apptTime, checkoutLink).catch(() => {})
+
+      // Schedule 24h recovery with a setTimeout (fire-and-forget)
+      setTimeout(() => {
+        sendAbandonedBooking24h(phone, patientName, doctorName, doctorsLink).catch(() => {})
+      }, 24 * 60 * 60 * 1000)
+    }
+  } catch {
+    // Non-critical — don't fail expiry if recovery scheduling fails
+  }
+
   return { expiredCount: pendingIds.length }
 }

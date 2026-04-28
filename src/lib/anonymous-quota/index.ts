@@ -6,7 +6,7 @@
 
 import { cookies } from 'next/headers'
 
-const ANONYMOUS_QUOTA_LIMIT = 5
+const ANONYMOUS_QUOTA_LIMIT = 999
 const SESSION_COOKIE_NAME = 'doctor_mx_session'
 const QUOTA_COOKIE_NAME = 'doctor_mx_quota_used'
 
@@ -80,7 +80,7 @@ export async function canAnonymousConsult(sessionId?: string): Promise<{
     return {
       canConsult: false,
       quota,
-      message: 'Has usado tus 5 consultas gratis. Regístrate o actualiza a Premium para continuar.',
+      message: 'Continúa la conversación creando tu cuenta gratuita.',
     }
   }
 

@@ -86,6 +86,21 @@ export default async function DoctorProfilePage({
     getDoctorAnsweredQuestions(id, 4),
   ])
 
+  // Fetch doctor's accepted insurances
+  const { createServiceClient } = await import('@/lib/supabase/server')
+  const supabase = createServiceClient()
+  const { data: doctorInsurances } = await supabase
+    .from('doctor_insurances')
+    .select('insurance:insurance_providers(id, name, type)')
+    .eq('doctor_id', id)
+    .limit(8)
+
+  const insurances = (doctorInsurances || [])
+    .flatMap((row: { insurance: { id: string; name: string; type: string }[] | { id: string; name: string; type: string } | null }) => {
+      if (!row.insurance) return []
+      return Array.isArray(row.insurance) ? row.insurance : [row.insurance]
+    })
+
   const totalConsultations = ratingSummary?.rating_count || 0
   const averageRating = doctor.rating_avg || ratingSummary?.rating_avg || 0
   const doctorPhotoUrl = doctor.profile?.photo_url || null
@@ -169,6 +184,18 @@ export default async function DoctorProfilePage({
                         {' · '}
                         {headlineLocation}
                       </p>
+                      {insurances.length > 0 && (
+                        <div className="mt-3 flex flex-wrap items-center gap-2">
+                          <span className="text-xs font-semibold uppercase tracking-[0.12em] text-[hsl(var(--public-muted))]">
+                            Acepta:
+                          </span>
+                          {insurances.map((ins) => (
+                            <Badge key={ins.id} variant="outline" className="normal-case tracking-normal text-xs">
+                              {ins.name}
+                            </Badge>
+                          ))}
+                        </div>
+                      )}
                     </div>
 
                     <div className="flex flex-wrap gap-2">

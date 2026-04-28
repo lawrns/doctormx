@@ -20,6 +20,9 @@ export type NotificationTemplate =
   | 'doctor_documents_requested'
   | 'subscription_activated'
   | 'subscription_payment_failed'
+  | 'abandoned_booking_15min'
+  | 'abandoned_booking_2h'
+  | 'abandoned_booking_24h'
 
 interface NotificationContext {
   patientName?: string
@@ -229,6 +232,45 @@ ${ctx.bookingLink || 'https://doctory.mx/doctors'}
 
 — *Doctor.mx: Tu salud, simplificada*`
 
+    case 'abandoned_booking_15min':
+      return `⏰ *Doctor.mx — Tu cita quedó pendiente*
+
+Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
+
+Empezaste a reservar con ${ctx.doctorName ? `la Dra./Dr. ${ctx.doctorName}` : 'un médico'} pero no completaste el pago.
+
+El horario que elegiste${ctx.appointmentDate ? ` (${ctx.appointmentDate} a las ${ctx.appointmentTime})` : ''} todavía está disponible.
+
+Complétalo aquí: ${ctx.bookingLink || 'https://doctor.mx/app'}
+
+— *Doctor.mx*`
+
+    case 'abandoned_booking_2h':
+      return `📅 *Doctor.mx — Tu cita sigue disponible*
+
+Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
+
+Tu cita con ${ctx.doctorName ? `la Dra./Dr. ${ctx.doctorName}` : 'tu médico'} está pendiente de pago.
+
+${ctx.appointmentDate ? `📅 ${ctx.appointmentDate} a las ${ctx.appointmentTime}` : ''}
+
+El horario que seleccionaste sigue disponible. Complétalo antes de que alguien más lo reserve:
+${ctx.bookingLink || 'https://doctor.mx/app'}
+
+— *Doctor.mx*`
+
+    case 'abandoned_booking_24h':
+      return `👋 *Doctor.mx — ¿Todavía buscas médico?*
+
+Hola${ctx.patientName ? ` ${ctx.patientName}` : ''},
+
+${ctx.doctorName ? `La Dra./Dr. ${ctx.doctorName}` : 'El médico que elegiste'} todavía tiene disponibilidad esta semana.
+
+¿Quieres ver otros horarios? Entra aquí:
+${ctx.bookingLink || 'https://doctor.mx/doctors'}
+
+— *Doctor.mx*`
+
     default:
       return 'Mensaje de Doctor.mx'
   }
@@ -435,4 +477,51 @@ export async function getDoctorName(doctorId: string): Promise<string | null> {
   }
 
   return data.full_name
+}
+
+export async function sendAbandonedBooking15m(
+  phone: string,
+  patientName: string,
+  doctorName: string,
+  appointmentDate: string,
+  appointmentTime: string,
+  checkoutLink: string
+): Promise<{ success: boolean; messageSid?: string; error?: string }> {
+  return sendWhatsAppNotification(phone, 'abandoned_booking_15min', {
+    patientName,
+    doctorName,
+    appointmentDate,
+    appointmentTime,
+    bookingLink: checkoutLink,
+  })
+}
+
+export async function sendAbandonedBooking2h(
+  phone: string,
+  patientName: string,
+  doctorName: string,
+  appointmentDate: string,
+  appointmentTime: string,
+  checkoutLink: string
+): Promise<{ success: boolean; messageSid?: string; error?: string }> {
+  return sendWhatsAppNotification(phone, 'abandoned_booking_2h', {
+    patientName,
+    doctorName,
+    appointmentDate,
+    appointmentTime,
+    bookingLink: checkoutLink,
+  })
+}
+
+export async function sendAbandonedBooking24h(
+  phone: string,
+  patientName: string,
+  doctorName: string,
+  doctorsLink: string
+): Promise<{ success: boolean; messageSid?: string; error?: string }> {
+  return sendWhatsAppNotification(phone, 'abandoned_booking_24h', {
+    patientName,
+    doctorName,
+    bookingLink: doctorsLink,
+  })
 }

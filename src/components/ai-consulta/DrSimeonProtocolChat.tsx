@@ -548,7 +548,7 @@ export function DrSimeonProtocolChat({
   }
 
   const quotaFull = anonymous && quota !== null && quota.remaining <= 0
-  const canSend = input.trim().length > 0 && !isBusy && !quotaFull
+  const canSend = input.trim().length > 0 && !isBusy
 
   return (
     <div className="fixed inset-0 flex h-dvh flex-col overflow-hidden bg-background">
@@ -575,7 +575,7 @@ export function DrSimeonProtocolChat({
               <SheetContent side="left" className="w-[86vw] max-w-sm gap-0 p-0" showCloseButton>
                 <SheetTitle className="sr-only">Atajos y contexto</SheetTitle>
                 <div className="h-full overflow-hidden">
-                  <LeftRail onQuickStart={(prompt) => void submitText(prompt, true)} disabled={isBusy || quotaFull} />
+                  <LeftRail onQuickStart={(prompt) => void submitText(prompt, true)} disabled={isBusy} />
                 </div>
               </SheetContent>
             </Sheet>
@@ -586,7 +586,7 @@ export function DrSimeonProtocolChat({
       <main className="min-h-0 flex-1 overflow-hidden">
         <div className="mx-auto grid h-full max-w-7xl lg:grid-cols-[280px_minmax(0,1fr)_320px]">
           <div className="hidden min-h-0 lg:block">
-            <LeftRail onQuickStart={(prompt) => void submitText(prompt, true)} disabled={isBusy || quotaFull} />
+            <LeftRail onQuickStart={(prompt) => void submitText(prompt, true)} disabled={isBusy} />
           </div>
 
           <section className="flex min-h-0 flex-col border-x border-border">
@@ -628,60 +628,59 @@ export function DrSimeonProtocolChat({
 
             <div className="shrink-0 border-t border-border bg-card/95 px-3 py-2.5 sm:px-4 sm:py-3">
               <div className="mx-auto max-w-[760px]">
-                {quotaFull ? (
-                  <div className="rounded-xl border border-border bg-background p-4 text-center">
-                    <p className="text-sm text-muted-foreground">Terminaste tus consultas gratuitas. Crea una cuenta para continuar.</p>
-                    <Link href="/auth/register" className="mt-3 inline-flex rounded-lg bg-ink px-4 py-2 text-sm font-semibold text-primary-foreground">
+                {quotaFull && (
+                  <div className="mb-2 rounded-lg border border-border bg-[hsl(var(--surface-soft))] px-4 py-3 flex items-center justify-between gap-3">
+                    <p className="text-xs text-muted-foreground">¿Listo para hablar con un especialista real? Crea tu cuenta gratuita y agenda en minutos.</p>
+                    <Link href="/auth/register" className="shrink-0 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground whitespace-nowrap">
                       Crear cuenta
                     </Link>
                   </div>
-                ) : (
-                  <div className="rounded-xl border border-border bg-background p-2.5 shadow-sm transition-colors focus-within:border-ink/35 focus-within:ring-2 focus-within:ring-ink/10 sm:p-3">
-                    <div className="mb-2 flex items-start gap-2 border-b border-border pb-2">
-                      <Stethoscope className="mt-0.5 size-3.5 shrink-0 text-[hsl(var(--trust))]" />
-                      <div className="min-w-0">
-                        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Siguiente pregunta</p>
-                        <p className="mt-0.5 line-clamp-2 text-xs leading-5 text-muted-foreground">{summary.nextQuestion}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-end gap-2">
-                      <textarea
-                        ref={textareaRef}
-                        rows={1}
-                        value={input}
-                        onChange={(event) => {
-                          setInput(event.target.value)
-                          resizeTextarea(event.target)
-                        }}
-                        onKeyDown={handleKeyDown}
-                        disabled={isBusy}
-                        placeholder={summary.nextQuestion}
-                        className="max-h-24 min-h-9 flex-1 resize-none border-none bg-transparent px-1 py-2 text-base leading-6 text-foreground outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-60 sm:text-sm"
-                      />
-                      <Button
-                        type="button"
-                        size="icon"
-                        onClick={() => void submitText(input)}
-                        disabled={!canSend}
-                        className="h-10 w-10 shrink-0 rounded-lg bg-ink text-primary-foreground transition-transform active:translate-y-px disabled:bg-muted disabled:text-muted-foreground"
-                        aria-label="Enviar mensaje"
-                      >
-                        {isBusy ? (
-                          <span className="flex items-center gap-0.5" aria-hidden="true">
-                            <span className="size-1 rounded-full bg-current opacity-55" />
-                            <span className="size-1 rounded-full bg-current opacity-75" />
-                            <span className="size-1 rounded-full bg-current" />
-                          </span>
-                        ) : (
-                          <Send className="size-4" />
-                        )}
-                      </Button>
-                    </div>
-                    <p className="mt-2 border-t border-border pt-2 text-[11px] leading-4 text-muted-foreground">
-                      No diagnostica. En emergencias llama al 911.
-                    </p>
-                  </div>
                 )}
+                <div className="rounded-xl border border-border bg-background p-2.5 shadow-sm transition-colors focus-within:border-ink/35 focus-within:ring-2 focus-within:ring-ink/10 sm:p-3">
+                  <div className="mb-2 flex items-start gap-2 border-b border-border pb-2">
+                    <Stethoscope className="mt-0.5 size-3.5 shrink-0 text-[hsl(var(--trust))]" />
+                    <div className="min-w-0">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Siguiente pregunta</p>
+                      <p className="mt-0.5 line-clamp-2 text-xs leading-5 text-muted-foreground">{summary.nextQuestion}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-end gap-2">
+                    <textarea
+                      ref={textareaRef}
+                      rows={1}
+                      value={input}
+                      onChange={(event) => {
+                        setInput(event.target.value)
+                        resizeTextarea(event.target)
+                      }}
+                      onKeyDown={handleKeyDown}
+                      disabled={isBusy}
+                      placeholder={summary.nextQuestion}
+                      className="max-h-24 min-h-9 flex-1 resize-none border-none bg-transparent px-1 py-2 text-base leading-6 text-foreground outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-60 sm:text-sm"
+                    />
+                    <Button
+                      type="button"
+                      size="icon"
+                      onClick={() => void submitText(input)}
+                      disabled={!canSend}
+                      className="h-10 w-10 shrink-0 rounded-lg bg-ink text-primary-foreground transition-transform active:translate-y-px disabled:bg-muted disabled:text-muted-foreground"
+                      aria-label="Enviar mensaje"
+                    >
+                      {isBusy ? (
+                        <span className="flex items-center gap-0.5" aria-hidden="true">
+                          <span className="size-1 rounded-full bg-current opacity-55" />
+                          <span className="size-1 rounded-full bg-current opacity-75" />
+                          <span className="size-1 rounded-full bg-current" />
+                        </span>
+                      ) : (
+                        <Send className="size-4" />
+                      )}
+                    </Button>
+                  </div>
+                  <p className="mt-2 border-t border-border pt-2 text-[11px] leading-4 text-muted-foreground">
+                    No diagnostica. En emergencias llama al 911.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
