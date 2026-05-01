@@ -7,6 +7,8 @@ const port =
     ? requestedPort
     : '3010';
 const baseURL = `http://localhost:${port}`;
+const testSupabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'http://127.0.0.1:54321';
+const testSupabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'test-anon-key';
 
 export default defineConfig({
   testDir: './e2e',
@@ -31,5 +33,10 @@ export default defineConfig({
     url: baseURL,
     reuseExistingServer: true,
     timeout: 180000,
+    env: {
+      ...process.env,
+      NEXT_PUBLIC_SUPABASE_URL: testSupabaseUrl,
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: testSupabaseAnonKey,
+    },
   },
 });

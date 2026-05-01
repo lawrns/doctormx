@@ -32,10 +32,16 @@ test.describe('frontend optimization smoke', () => {
     await expect(page.getByText('Filtros').first()).toBeVisible()
     await expect(page.getByLabel(/ordenar doctores/i)).toBeVisible()
     const bookingLink = page.getByRole('link', { name: /agendar(?: cita)?/i }).first()
-    const emptyState = page.getByText(/no encontramos doctores/i)
+    const guidanceLink = page.getByRole('link', { name: /orientarme/i }).first()
+    const profileLink = page.getByRole('link', { name: /ver perfil/i }).first()
+    const emptyState = page.getByText(/no encontramos doctores|sin resultados/i)
 
     if (await bookingLink.count()) {
       await expect(bookingLink).toBeVisible()
+    } else if (await guidanceLink.count()) {
+      await expect(guidanceLink).toBeVisible()
+      await expect(profileLink).toBeVisible()
+      await expect(page.getByText(/ver disponibilidad/i).first()).toBeVisible()
     } else {
       await expect(emptyState).toBeVisible()
     }
