@@ -16,12 +16,12 @@ test.describe('Booking Flow', () => {
       await page.goto('/doctores');
     }
     
-    await expect(page).toHaveURL(/\/doctores/, { timeout: 15000 });
+    await expect(page).toHaveURL(/\/(doctors|doctores)/, { timeout: 15000 });
   });
 
   test('should view doctor profile if available', async ({ page }) => {
     // Direct navigation to doctors list
-    await page.goto('/doctores');
+    await page.goto('/doctors');
     await page.waitForLoadState('networkidle');
     
     // Check if we see any links (doctor profiles often have their own links)
@@ -30,11 +30,11 @@ test.describe('Booking Flow', () => {
     console.log('Total links on /doctores:', linkCount);
 
     // Look for links that look like doctor profiles
-    const doctorProfileLink = page.locator('a[href^="/doctores/"]').first();
+    const doctorProfileLink = page.locator('a[href^="/doctors/"], a[href^="/doctores/"]').first();
     
     if (await doctorProfileLink.isVisible()) {
       await doctorProfileLink.click();
-      await expect(page).toHaveURL(/\/doctores\/[a-z0-9-]+/);
+      await expect(page).toHaveURL(/\/(doctors|doctores)\/[a-z0-9-]+/);
       await expect(page.locator('body')).toBeVisible();
     } else {
       console.log('No specific doctor links found, checking body content');

@@ -10,6 +10,8 @@ import { Footer } from '@/components/layout/Footer'
 import { formatDoctorName } from '@/lib/utils'
 import { createClient } from '@/lib/supabase/server'
 
+export const dynamic = 'force-dynamic'
+
 type Specialty = {
   id: string
   name: string

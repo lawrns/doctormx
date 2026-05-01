@@ -1,5 +1,15 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const requestedPort = process.env.PLAYWRIGHT_PORT || '3010';
+const requestedPortNumber = Number(requestedPort);
+const port =
+  /^\d+$/.test(requestedPort) && requestedPortNumber >= 1 && requestedPortNumber <= 65535
+    ? requestedPort
+    : '3010';
+const baseURL = `http://localhost:${port}`;
+const testSupabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || 'http://127.0.0.1:54321';
+const testSupabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'test-anon-key';
+
 export default defineConfig({
   testDir: './e2e',
   fullyParallel: true,
@@ -8,7 +18,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:3002',
+    baseURL,
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
   },
@@ -19,9 +29,14 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run dev -- -p 3002',
-    url: 'http://localhost:3002',
+    command: `npm run dev -- -p ${port}`,
+    url: baseURL,
     reuseExistingServer: true,
     timeout: 180000,
+    env: {
+      ...process.env,
+      NEXT_PUBLIC_SUPABASE_URL: testSupabaseUrl,
+      NEXT_PUBLIC_SUPABASE_ANON_KEY: testSupabaseAnonKey,
+    },
   },
 });

@@ -44,7 +44,7 @@ export type ProtocolResult = {
 }
 
 const EMERGENCY_PATTERN =
-  /dolor.{0,30}pecho|pecho.{0,30}dolor|falta.{0,12}aire|dificultad.{0,15}respirar|no puedo respirar|desmayo|convulsi|debilidad.{0,20}(brazo|pierna|lado)|confusi[oó]n|sangrado.{0,20}(fuerte|importante|no para)|suicid|hacerme da[nñ]o/i
+  /dolor.{0,30}pecho|pecho.{0,30}dolor|presi[oó]n.{0,30}pecho|pecho.{0,30}presi[oó]n|falta.{0,12}aire|dificultad.{0,15}respirar|cuesta.{0,15}respirar|no puedo respirar|desmayo|convulsi|debilidad.{0,20}(brazo|pierna|lado)|confusi[oó]n|sangrado.{0,20}(fuerte|importante|no para)|suicid|hacerme da[nñ]o|urgencias?/i
 
 function cleanAnswer(input: string) {
   return input.trim().replace(/\s+/g, ' ')
@@ -240,9 +240,23 @@ export function applyProtocolTurn(state: ProtocolState, rawInput: string): Proto
 }
 
 export function seedChiefComplaintBeforeName(state: ProtocolState, prompt: string): ProtocolResult {
+  const input = cleanAnswer(prompt)
   const nextState: ProtocolState = {
     ...state,
-    pendingChiefComplaint: prompt,
+    answers: { ...state.answers },
+    pendingChiefComplaint: input,
+  }
+
+  if (EMERGENCY_PATTERN.test(input)) {
+    nextState.answers.chiefComplaint = input
+    nextState.step = 'emergency'
+    nextState.completed = true
+    return {
+      state: nextState,
+      caseSummary: getCaseSummary(nextState),
+      assistantMessage:
+        'Esto puede ser una señal de alarma. No esperes una orientación por chat: llama al 911 o acude a urgencias ahora. Si puedes, pide a alguien que te acompañe.',
+    }
   }
 
   return {

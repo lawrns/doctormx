@@ -122,6 +122,12 @@ export default function BlogPage() {
     return `${minutes} min de lectura`
   }
 
+  const getSafeFeaturedImage = (image: string | null) => {
+    if (!image) return null
+    if (image.startsWith('http://') || image.startsWith('https://')) return image
+    return null
+  }
+
   return (
     <main className="min-h-screen bg-background">
       <Header />
@@ -214,10 +220,10 @@ export default function BlogPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Main Content */}
-            <div className="flex-1">
+            <div className="flex-1 min-w-0">
               {/* Category Tabs */}
-              <div className="mb-8 overflow-x-auto">
-                <div className="flex gap-2 min-w-max pb-2">
+              <div className="mb-8">
+                <div className="flex flex-wrap gap-2 pb-2">
                   <button
                     onClick={() => setActiveCategory('')}
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
@@ -265,9 +271,9 @@ export default function BlogPage() {
                       <Link href={`/blog/${post.slug}`} className="group block h-full">
                         <Card className="h-full p-0 overflow-hidden bg-card border-border hover:shadow-md transition-all duration-200 group-hover:-translate-y-1">
                           <div className="h-48 bg-gradient-to-br from-neutral-100 to-neutral-50 relative overflow-hidden">
-                            {post.featured_image ? (
+                            {getSafeFeaturedImage(post.featured_image) ? (
                               <Image
-                                src={post.featured_image}
+                                src={getSafeFeaturedImage(post.featured_image) ?? ''}
                                 alt={post.title}
                                 fill
                                 sizes="(max-width: 640px) 100vw, 50vw"

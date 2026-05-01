@@ -369,7 +369,7 @@ function RegisterContent() {
       {/* Right Panel - Registration Form */}
       <div className="flex flex-col bg-background">
         {/* Mobile logo */}
-        <div className="lg:hidden flex items-center justify-center gap-2.5 p-6">
+        <div className="lg:hidden flex items-center justify-center gap-2.5 px-6 py-4">
           <div className="w-8 h-8 bg-[hsl(var(--interactive))] rounded-lg flex items-center justify-center">
             <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -378,8 +378,8 @@ function RegisterContent() {
           <span className="text-lg font-bold text-foreground">Doctor.mx</span>
         </div>
 
-        <div className="flex-1 flex items-center justify-center p-4">
-          <div className="w-full max-w-md space-y-5 rounded-[12px] border border-[hsl(var(--foreground)/0.07)] bg-card p-5 shadow-[var(--shadow-sm)] sm:p-6">
+        <div className="flex-1 flex items-start justify-center px-4 pb-[calc(2rem+env(safe-area-inset-bottom))] pt-2 sm:items-center sm:p-4">
+          <div className="w-full max-w-md space-y-4 rounded-[12px] border border-[hsl(var(--foreground)/0.07)] bg-card p-4 shadow-[var(--shadow-sm)] sm:space-y-5 sm:p-6">
             {/* Header */}
             <div className="flex flex-col space-y-2 text-center">
               <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
@@ -388,7 +388,7 @@ function RegisterContent() {
             </div>
 
             {/* Step labels */}
-            <div className="flex items-center gap-3 mb-6">
+            <div className="mb-4 flex items-center gap-3 sm:mb-6">
               <span className={`text-sm font-semibold ${currentStep === 1 ? 'text-[hsl(var(--ink))]' : 'text-[hsl(var(--ink-soft))]'}`}>1. Cuenta</span>
               <span className="text-muted-foreground">→</span>
               <span className={`text-sm font-semibold ${currentStep === 2 ? 'text-[hsl(var(--ink))]' : 'text-[hsl(var(--ink-soft))]'}`}>2. Perfil básico</span>
