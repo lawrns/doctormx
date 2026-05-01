@@ -44,7 +44,7 @@ class DeepSeekClient {
     this.apiKey = process.env.DEEPSEEK_API_KEY || ''
 
     if (!this.apiKey) {
-      logger.info('[DEEPSEEK] API key not configured; provider disabled')
+      logger.debug('[DEEPSEEK] API key not configured; provider disabled')
     }
   }
 
