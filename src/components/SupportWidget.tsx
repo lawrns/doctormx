@@ -55,9 +55,11 @@ export function SupportWidget() {
     return null
   }
 
+  const useCompactDesktopTrigger = pathname === '/' || pathname?.startsWith('/blog')
+
   if (isMobile) {
     return (
-      <div className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-50">
+      <div className={useCompactDesktopTrigger ? 'fixed bottom-[calc(5.25rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-50' : 'fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-50'}>
         <Sheet open={open} onOpenChange={handleOpenChange}>
           <SheetTrigger asChild>
             <Button
@@ -84,7 +86,7 @@ export function SupportWidget() {
   }
 
   return (
-    <div className="fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-50 w-[min(320px,calc(100vw-32px))] max-w-[320px]">
+    <div className={useCompactDesktopTrigger ? 'fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-40' : 'fixed bottom-[calc(1rem+env(safe-area-inset-bottom))] right-[calc(1rem+env(safe-area-inset-right))] z-40 w-[min(260px,calc(100vw-32px))] max-w-[260px] xl:w-[280px] xl:max-w-[280px]'}>
       <AnimatePresence>
         {open ? (
           <motion.div
@@ -92,31 +94,49 @@ export function SupportWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 14, scale: 0.97 }}
             transition={{ type: 'spring', stiffness: 400, damping: 28 }}
-            className="pointer-events-auto absolute bottom-[calc(100%+10px)] right-0 w-[min(420px,calc(100vw-32px))] max-w-[420px] origin-bottom-right"
+            className="pointer-events-auto absolute bottom-[calc(100%+10px)] right-0 w-[min(380px,calc(100vw-32px))] max-w-[380px] origin-bottom-right"
           >
             <SupportPanel layout="desktop" onDismiss={() => setOpen(false)} />
           </motion.div>
         ) : null}
       </AnimatePresence>
       <div className="flex justify-end">
-        <Button
-          type="button"
-          aria-label="Abrir asistente Dr. Simeon"
-          aria-expanded={open}
-          onClick={() => handleOpenChange(!open)}
-          className="group relative h-auto w-full rounded-2xl border border-white/15 bg-[hsl(var(--brand-ink)_/_0.85)] px-4 py-3 text-primary-foreground shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:bg-[hsl(var(--brand-ink))] hover:shadow-xl"
-        >
-          <div className="flex items-center gap-3">
-            <SupportPresenceOrb size="md" isLoading={open} />
-            <div className="min-w-0 flex-1 text-left">
-              <div className="text-sm font-semibold text-white tracking-[-0.02em]">Dr. Simeon</div>
-              <div className="truncate text-xs text-white/90">Te guía dentro de Doctor.mx</div>
+        {useCompactDesktopTrigger ? (
+          <Button
+            type="button"
+            size="icon-lg"
+            aria-label="Abrir asistente Dr. Simeon"
+            aria-expanded={open}
+            onClick={() => handleOpenChange(!open)}
+            className="group h-14 w-14 rounded-[14px] border border-white/15 bg-[hsl(var(--brand-ink)_/_0.9)] text-primary-foreground shadow-[0_8px_24px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:bg-[hsl(var(--brand-ink))] hover:shadow-xl"
+          >
+            <span className="relative flex h-8 w-8 items-center justify-center" aria-hidden="true">
+              <SupportPresenceOrb size="md" isLoading={open} />
+              <span className="absolute -bottom-1 -right-1 rounded-full bg-white/15 p-1 text-white/95 group-hover:bg-white/20 transition-colors">
+                {open ? <X className="h-3.5 w-3.5" /> : <MessageSquareMore className="h-3.5 w-3.5" />}
+              </span>
+            </span>
+          </Button>
+        ) : (
+          <Button
+            type="button"
+            aria-label="Abrir asistente Dr. Simeon"
+            aria-expanded={open}
+            onClick={() => handleOpenChange(!open)}
+            className="group relative h-auto w-full rounded-2xl border border-white/15 bg-[hsl(var(--brand-ink)_/_0.82)] px-3 py-2.5 text-primary-foreground shadow-[0_8px_24px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all hover:-translate-y-0.5 hover:bg-[hsl(var(--brand-ink))] hover:shadow-xl"
+          >
+            <div className="flex items-center gap-2.5">
+              <SupportPresenceOrb size="md" isLoading={open} />
+              <div className="min-w-0 flex-1 text-left">
+                <div className="text-sm font-semibold text-white tracking-[-0.02em]">Dr. Simeon</div>
+                <div className="truncate text-xs text-white/90">Te guía dentro de Doctor.mx</div>
+              </div>
+              <div className="rounded-full bg-white/15 p-1.5 text-white/95 group-hover:bg-white/20 transition-colors" aria-hidden="true">
+                {open ? <X className="h-4 w-4" /> : <MessageSquareMore className="h-4 w-4" />}
+              </div>
             </div>
-            <div className="rounded-full bg-white/15 p-2 text-white/95 group-hover:bg-white/20 transition-colors" aria-hidden="true">
-              {open ? <X className="h-4 w-4" /> : <MessageSquareMore className="h-4 w-4" />}
-            </div>
-          </div>
-        </Button>
+          </Button>
+        )}
       </div>
     </div>
   )

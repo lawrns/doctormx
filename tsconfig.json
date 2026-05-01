@@ -39,6 +39,7 @@
   ],
   "exclude": [
     "node_modules",
+    ".next/dev",
     "legacy",
     "legacy/**",
     "src/index.css",

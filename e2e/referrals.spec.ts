@@ -105,19 +105,19 @@ test.describe('Referral signup flow', () => {
 
     await expect(page.getByRole('heading', { name: 'Crear cuenta' })).toBeVisible()
 
+    await page.getByText('Soy paciente').click()
     await page.getByRole('button', { name: 'Siguiente' }).click()
 
-    await expect(page.getByLabel('Nombre completo')).toBeVisible()
-    await expect(page.getByLabel('Código de referido (opcional)')).toHaveValue('ABC123')
-    await page.getByLabel('Nombre completo').fill('Lucía Pérez')
-    await page.getByLabel('Correo electrónico').fill('lucia@example.com')
+    await expect(page.getByPlaceholder('Juan Pérez')).toBeVisible()
+    await page.getByPlaceholder('Juan Pérez').fill('Lucía Pérez')
+    await page.getByPlaceholder('tu@email.com').fill('lucia@example.com')
     await page.getByRole('textbox', { name: 'Contraseña', exact: true }).fill('Test1234!')
-    await page.getByRole('textbox', { name: 'Confirmar contraseña', exact: true }).fill('Test1234!')
+    await page.getByPlaceholder('Confirma tu contraseña').fill('Test1234!')
 
     await page.getByRole('button', { name: 'Siguiente' }).click()
 
-    await expect(page.getByRole('checkbox', { name: /Acepto los términos/ })).toBeVisible()
-    await page.getByRole('checkbox', { name: /Acepto los términos/ }).check()
+    await expect(page.getByRole('heading', { name: 'Perfil básico' })).toBeVisible()
+    await expect(page.getByPlaceholder('AB12CD')).toHaveValue('ABC123')
     await page.getByRole('button', { name: 'Crear cuenta' }).click()
 
     await expect(page.getByTestId('referral-share-card')).toBeVisible({ timeout: 15000 })

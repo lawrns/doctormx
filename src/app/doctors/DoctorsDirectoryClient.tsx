@@ -434,7 +434,7 @@ function MobileFilterStrip({
         </select>
       </div>
 
-      <div className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1">
+      <div className="mt-3 flex flex-wrap gap-2 pb-1">
         <FilterChip
           label="Todas"
           active={!params.appointmentType || params.appointmentType === 'all'}
@@ -544,13 +544,13 @@ function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
   const hasVerificationDetails = Boolean(verification?.cedula && verifiedDate)
   const profileHref = doctor.demo ? '/ai-consulta' : `/doctors/${doctor.id}`
   const bookingHref = doctor.demo ? '/ai-consulta' : `/book/${doctor.id}`
-  const specialty = doctor.specialties[0]?.name || 'Especialidad medica'
+  const specialty = doctor.specialties[0]?.name || 'Especialidad médica'
   const location = [doctor.office_address || doctor.city, doctor.state].filter(Boolean).join(', ')
 
   return (
     <article className="overflow-hidden rounded-[10px] border border-border bg-card shadow-[0_1px_2px_rgba(15,37,95,0.04)] transition-colors hover:border-[hsl(var(--brand-ocean)/0.28)]">
       <div className="grid lg:grid-cols-[minmax(0,1fr)_18.5rem]">
-        <div className="p-4 lg:border-r lg:border-border/80">
+        <div className="p-3.5 lg:border-r lg:border-border/80 lg:p-4">
           <div className="flex gap-3.5">
             <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-full bg-[hsl(var(--surface-tint))] ring-1 ring-border">
               {doctor.profile?.photo_url ? (
@@ -640,12 +640,25 @@ function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
           </div>
         </div>
 
-        <div className="border-t border-border/80 bg-[hsl(var(--surface-quiet))] p-4 lg:border-t-0">
+        <div className="border-t border-border/80 bg-[hsl(var(--surface-quiet))] p-3.5 lg:border-t-0 lg:p-4">
           <div className="flex h-full flex-col justify-between gap-3">
             <div>
-              <p className="text-sm font-semibold text-[hsl(var(--public-ink))]">
-                Ver disponibilidad
-              </p>
+              <div className="mb-3 flex items-center justify-between gap-3 lg:block">
+                <div>
+                  <p className="text-sm font-semibold text-[hsl(var(--public-ink))]">
+                    Ver disponibilidad
+                  </p>
+                  <p className="mt-0.5 text-xs text-[hsl(var(--public-muted))] lg:hidden">
+                    Horarios al abrir agenda
+                  </p>
+                </div>
+                <Button asChild variant="primary" size="sm" className="shrink-0 rounded-[8px] px-3 lg:hidden">
+                  <Link href={bookingHref}>
+                    {doctor.demo ? 'Orientarme' : 'Agendar'}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </Button>
+              </div>
               <div className="mt-2 grid grid-cols-2 gap-2">
                 {(doctor.offers_video || doctor.video_enabled) ? (
                   <span className="inline-flex items-center gap-1.5 rounded-[8px] border border-border bg-card px-2.5 py-2 text-xs text-[hsl(var(--public-muted))]">
@@ -660,7 +673,7 @@ function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
                   </span>
                 ) : null}
               </div>
-              <p className="mt-3 flex items-center gap-1.5 text-xs text-[hsl(var(--public-muted))]">
+              <p className="mt-3 hidden items-center gap-1.5 text-xs text-[hsl(var(--public-muted))] lg:flex">
                 <CalendarDays className="h-3.5 w-3.5" />
                 Horarios exactos al abrir agenda
               </p>
@@ -677,7 +690,7 @@ function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
                 <Button asChild variant="secondary" size="sm" className="w-full rounded-[8px]">
                 <Link href={profileHref}>Ver perfil</Link>
               </Button>
-                <Button asChild variant="primary" size="sm" className="w-full rounded-[8px]">
+                <Button asChild variant="primary" size="sm" className="hidden w-full rounded-[8px] lg:inline-flex">
                 <Link href={bookingHref}>
                   {doctor.demo ? 'Orientarme' : 'Agendar cita'}
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />

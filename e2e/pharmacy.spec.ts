@@ -1,21 +1,18 @@
 import { test, expect } from '@playwright/test';
 
 test.describe('Pharmacy Integration', () => {
-  test('protected pharmacy page redirects to login', async ({ page }) => {
-    await page.goto('/pharmacy/affiliate');
-    await page.waitForTimeout(1000);
-    
-    // Protected route should show login or redirect
-    const bodyText = await page.locator('body').textContent();
-    const isAuthPage = bodyText && (
-      bodyText.toLowerCase().includes('iniciar sesion') ||
-      bodyText.toLowerCase().includes('login') ||
-      bodyText.toLowerCase().includes('correo electronico') ||
-      bodyText.toLowerCase().includes('contrasena')
-    );
-    
-    // Either on pharmacy page or auth page
-    expect(isAuthPage).toBeTruthy();
+  test('doctor pharmacy page requires doctor authentication', async ({ page }) => {
+    await page.goto('/doctor/pharmacy');
+
+    const bodyText = (await page.locator('body').textContent())?.toLowerCase() ?? '';
+    const isLoginGate =
+      page.url().includes('/auth/login') ||
+      bodyText.includes('iniciar sesión') ||
+      bodyText.includes('login') ||
+      bodyText.includes('correo electrónico') ||
+      bodyText.includes('contraseña');
+
+    expect(isLoginGate).toBeTruthy();
   });
 
   test('pharmacy API endpoint works', async ({ request }) => {
@@ -23,8 +20,9 @@ test.describe('Pharmacy Integration', () => {
     expect(response.ok()).toBeTruthy();
     
     const data = await response.json();
-    expect(data).toHaveProperty('results');
-    expect(Array.isArray(data.results)).toBeTruthy();
+    expect(data).toHaveProperty('products');
+    expect(Array.isArray(data.products)).toBeTruthy();
+    expect(data).toHaveProperty('total');
   });
 
   test('pharmacy compare API works', async ({ request }) => {

@@ -106,17 +106,22 @@ export function HeroSection({ trustData }: HeroSectionProps) {
           >
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.12em] text-primary-foreground/80 ring-1 ring-white/12">
               <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />
-              Médicos verificados
+              Cédula profesional visible antes de reservar
             </div>
 
-            <h1 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-white">
+            <h1 className="font-display text-[clamp(2.25rem,5vw,4.5rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-white">
               No sabes si es estrés, migraña o algo peor.{' '}
               <span className="font-serif italic tracking-[-0.04em] text-primary">Dr. Simeón te orienta en 2 minutos.</span>
             </h1>
 
-            <p className="mt-6 max-w-[42rem] text-base leading-7 text-white/74 sm:text-lg">
-              Describe tus síntomas. Dr. Simeón identifica la especialidad correcta. Te mostramos 3 médicos verificados con precio, cédula y horarios reales. Primera consulta desde $500 MXN.
+            <p className="mt-5 max-w-[42rem] text-base leading-6 text-white/74 sm:mt-6 sm:text-lg sm:leading-7">
+              Describe tus síntomas. Dr. Simeón ordena tu caso y te ayuda a elegir una especialidad. Te mostramos médicos con precio, cédula y horarios antes de reservar.
             </p>
+
+            <div className="mt-4 max-w-[42rem] rounded-2xl border border-white/14 bg-white/[0.08] p-3 text-sm leading-6 text-white/78 sm:p-4">
+              <p className="font-semibold text-white">Dr. Simeón es orientación con IA, no un diagnóstico médico.</p>
+              <p className="mt-1">Si detectamos señales de alarma, te pedimos acudir a urgencias o hablar con un médico humano.</p>
+            </div>
 
             <div className="mt-6 flex flex-col gap-3 pb-6 sm:flex-row lg:pb-8">
               <Button asChild size="lg" variant="primary" className="w-full sm:w-auto">

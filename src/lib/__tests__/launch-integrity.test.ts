@@ -125,6 +125,29 @@ describe('launch integrity guardrails', () => {
     expect(thresholds.statements).toBeGreaterThanOrEqual(70)
   })
 
+  it('keeps first-screen patient AI disclosure explicit and avoids unsupported price claims', () => {
+    const heroSource = readFileSync(
+      join(process.cwd(), 'src/components/landing/HeroSection.tsx'),
+      'utf8'
+    )
+
+    expect(heroSource).toContain('orientación con IA, no un diagnóstico médico')
+    expect(heroSource).toContain('médico humano')
+    expect(heroSource).not.toContain('Primera consulta desde $500 MXN')
+  })
+
+  it('lets pending doctors complete productive setup instead of waiting in limbo', () => {
+    const layoutSource = readFileSync(
+      join(process.cwd(), 'src/components/DoctorLayout.tsx'),
+      'utf8'
+    )
+
+    expect(layoutSource).toContain("{ name: 'Disponibilidad', href: '/doctor/availability', icon: Calendar, enabled: true }")
+    expect(layoutSource).toContain("{ name: 'Formularios', href: '/doctor/intake-forms', icon: FileText, enabled: true }")
+    expect(layoutSource).toContain('Mientras tanto puedes completar perfil, disponibilidad y formularios')
+    expect(layoutSource).toContain('aria-disabled={disabled}')
+  })
+
   it('ships DB-level booking and webhook idempotency constraints', () => {
     const migration = readFileSync(
       join(process.cwd(), 'supabase/migrations/20260422090000_launch_integrity_core.sql'),

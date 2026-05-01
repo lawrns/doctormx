@@ -35,10 +35,10 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
   ]
 
   const secondaryNav = [
-    { name: 'Disponibilidad', href: '/doctor/availability', icon: Calendar, enabled: !isPending },
+    { name: 'Disponibilidad', href: '/doctor/availability', icon: Calendar, enabled: true },
     { name: 'Análisis', href: '/doctor/analytics', icon: BarChart3, enabled: !isPending },
     { name: 'Recordatorios', href: '/doctor/reminders', icon: Bell, enabled: !isPending },
-    { name: 'Formularios', href: '/doctor/intake-forms', icon: FileText, enabled: !isPending },
+    { name: 'Formularios', href: '/doctor/intake-forms', icon: FileText, enabled: true },
     { name: 'Preguntas', href: '/doctor/preguntas', icon: MessageSquare, enabled: !isPending },
     { name: 'Widget', href: '/doctor/widget', icon: Code2, enabled: !isPending },
     { name: 'Plan', href: '/doctor/subscription', icon: Star, enabled: true },
@@ -53,6 +53,8 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
       <Link
         key={item.href}
         href={disabled ? '#' : item.href}
+        aria-disabled={disabled}
+        title={disabled ? 'Disponible cuando termine la verificación profesional' : undefined}
         onClick={(e) => {
           if (disabled) {
             e.preventDefault()
@@ -94,7 +96,8 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
           <div className="flex items-center gap-3">
             <button
               onClick={() => setSidebarOpen(true)}
-              className="p-2 -ml-2 rounded-md text-muted-foreground hover:bg-secondary"
+              className="min-h-11 min-w-11 p-2 -ml-2 rounded-md text-muted-foreground hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              aria-label="Abrir menú de doctor"
             >
               <Menu className="w-6 h-6" />
             </button>
@@ -144,7 +147,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
           {isPending && (
             <div className="mx-3 mb-4 rounded-lg border border-[hsl(var(--warning)/0.3)] bg-[hsl(var(--brand-gold)/0.1)] p-3">
               <p className="text-xs font-semibold text-[hsl(var(--brand-gold))]">Perfil en revisión</p>
-              <p className="mt-1 text-[11px] text-[hsl(var(--muted-foreground))]">Tu cédula está siendo verificada. 24-48 horas.</p>
+              <p className="mt-1 text-[11px] text-[hsl(var(--muted-foreground))]">Tu cédula está siendo verificada. Mientras tanto puedes completar perfil, disponibilidad y formularios.</p>
             </div>
           )}
 
@@ -197,7 +200,8 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
             <span className="font-display font-semibold text-foreground">Menú</span>
             <button
               onClick={() => setSidebarOpen(false)}
-              className="p-2 rounded-md text-muted-foreground hover:bg-secondary"
+              className="min-h-11 min-w-11 p-2 rounded-md text-muted-foreground hover:bg-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+              aria-label="Cerrar menú de doctor"
             >
               <X className="w-5 h-5" />
             </button>
@@ -206,7 +210,7 @@ export default function DoctorLayout({ children, profile, isPending, currentPath
           {isPending && (
             <div className="mx-3 mt-4 rounded-lg border border-[hsl(var(--warning)/0.3)] bg-[hsl(var(--brand-gold)/0.1)] p-3">
               <p className="text-xs font-semibold text-[hsl(var(--brand-gold))]">Perfil en revisión</p>
-              <p className="mt-1 text-[11px] text-[hsl(var(--muted-foreground))]">Tu cédula está siendo verificada. 24-48 horas.</p>
+              <p className="mt-1 text-[11px] text-[hsl(var(--muted-foreground))]">Tu cédula está siendo verificada. Mientras tanto puedes completar perfil, disponibilidad y formularios.</p>
             </div>
           )}
 
