@@ -3,6 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   reactCompiler: false,
   output: 'standalone',
+  turbopack: {
+    root: process.cwd(),
+  },
   // Skip prerendering for routes that require dynamic data
   experimental: {
     serverActions: {

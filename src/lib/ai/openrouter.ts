@@ -53,7 +53,7 @@ class OpenRouterClient {
     this.apiKey = process.env.OPENROUTER_API_KEY || ''
 
     if (!this.apiKey) {
-      logger.info('[OPENROUTER] API key not configured; provider disabled')
+      logger.debug('[OPENROUTER] API key not configured; provider disabled')
     }
   }
 
