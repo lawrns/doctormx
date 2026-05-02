@@ -4,14 +4,14 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
-import { BookOpen, TrendingUp, FileText, Monitor, Users, ArrowRight } from 'lucide-react'
+import { ArrowRight, CalendarCheck, CheckCircle, MessageSquare, ShieldCheck, TrendingUp, Users } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Recursos para Médicos | Digitaliza tu Consultorio con Doctor.mx',
-  description: 'Guías, herramientas y recursos para médicos mexicanos que quieren digitalizar su práctica. Expediente clínico electrónico, telemedicina y más.',
+  title: 'Para Médicos | Más pacientes para tu consultorio con Doctor.mx',
+  description: 'Capta pacientes, agenda consultas y digitaliza tu consultorio con Doctor.mx. Plan médico de $499 MXN/mes o $5,000 MXN/año, clínicas con demo comercial.',
   openGraph: {
-    title: 'Recursos para Médicos Mexicanos | Doctor.mx',
-    description: 'Todo lo que necesitas para digitalizar tu consultorio y conseguir más pacientes.',
+    title: 'Doctor.mx para Médicos y Clínicas',
+    description: 'Perfil verificado, WhatsApp, agenda, ROI claro y alternativa a Doctoralia para médicos mexicanos.',
     type: 'website',
     locale: 'es_MX',
   },
@@ -20,159 +20,170 @@ export const metadata: Metadata = {
   },
 }
 
-const resourceCards = [
+const proofPoints = [
+  { value: '$499', label: 'MXN/mes', detail: '$5,000 MXN/año con ahorro anual claro' },
+  { value: '14 días', label: 'gratis', detail: 'Sin tarjeta de crédito para empezar' },
+  { value: '1 consulta', label: 'para recuperar', detail: 'Una consulta adicional al mes puede pagar el plan' },
+]
+
+const steps = [
   {
-    title: 'Guía para digitalizar tu consultorio',
-    description: 'Aprende paso a paso cómo transformar tu consultorio tradicional en una práctica digital. Desde el expediente electrónico hasta la agenda en línea.',
-    icon: <Monitor className="w-6 h-6" />,
-    category: 'Guía práctica',
-    href: '/blog/digitalizar-consultorio-medico-2026',
+    title: 'Crea o reclama tu perfil',
+    body: 'Publica especialidad, ubicación, horarios, modalidades de consulta y datos profesionales.',
+    icon: Users,
   },
   {
-    title: 'Cómo conseguir más pacientes',
-    description: 'Estrategias probadas para atraer más pacientes sin gastar en publicidad. SEO médico, WhatsApp Business y marketing de contenidos para doctores.',
-    icon: <TrendingUp className="w-6 h-6" />,
-    category: 'Marketing médico',
-    href: '/blog/conseguir-pacientes-sin-publicidad',
+    title: 'Validamos seguridad y cédula',
+    body: 'Aplicamos verificación de cédula SEP y señales de confianza para que el paciente sepa con quién agenda.',
+    icon: ShieldCheck,
   },
   {
-    title: 'Expediente clínico electrónico',
-    description: 'Guía completa sobre el expediente clínico electrónico en México: NOM-024-SSA3-2012, beneficios, implementación y comparativa de plataformas.',
-    icon: <FileText className="w-6 h-6" />,
-    category: 'Tecnología',
-    href: '/blog/expediente-clinico-electronico-medicos',
-  },
-  {
-    title: 'Telemedicina en México 2026',
-    description: 'El panorama actual de la telemedicina en México: regulación, plataformas, mejores prácticas y cómo empezar a ofrecer consultas en línea.',
-    icon: <Users className="w-6 h-6" />,
-    category: 'Tendencias',
-    href: '/blog/telemedicina-mexico-guia-medicos',
-  },
-  {
-    title: 'Ventajas de la receta electrónica',
-    description: 'Cómo funciona la receta electrónica en México, requisitos legales y beneficios para médicos y pacientes. Implementación paso a paso.',
-    icon: <BookOpen className="w-6 h-6" />,
-    category: 'Legal',
-    href: '/blog/ventajas-receta-electronica-mexico',
-  },
-  {
-    title: 'WhatsApp Business para médicos',
-    description: 'Guía práctica para usar WhatsApp Business en tu consultorio: catálogo de servicios, respuestas rápidas y automatización de citas.',
-    icon: <MessageSquare className="w-6 h-6" />,
-    category: 'Herramientas',
-    href: '/blog/whatsapp-medicos-business-consultorio',
+    title: 'Convierte demanda en consultas',
+    body: 'Agenda, WhatsApp, recordatorios y seguimiento reducen fricción desde el primer contacto.',
+    icon: CalendarCheck,
   },
 ]
 
-function MessageSquare({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-    </svg>
-  )
-}
+const comparisonRows = [
+  { feature: 'Precio de entrada', doctormx: '$499 MXN/mes', doctoralia: 'Planes más altos' },
+  { feature: 'Plan anual', doctormx: '$5,000 MXN/año', doctoralia: 'Cotización variable' },
+  { feature: 'Prueba', doctormx: '14 días', doctoralia: 'Depende del paquete' },
+  { feature: 'Verificación profesional', doctormx: 'Cédula SEP y seguridad', doctoralia: 'Perfil básico' },
+  { feature: 'Ruta clínicas / Enterprise', doctormx: 'Agendar demo', doctoralia: 'Comercial tradicional' },
+]
 
 export default function ParaMedicosPage() {
   return (
     <div className="min-h-screen bg-[#f4f7fb]">
       <Header />
 
-      {/* Hero */}
       <section className="border-b border-border bg-card">
-        <div className="editorial-shell py-12 md:py-16">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Recursos para médicos</p>
-            <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
-              Digitaliza tu práctica médica
+        <div className="editorial-shell grid gap-8 py-12 md:py-16 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Para médicos y clínicas</p>
+            <h1 className="mt-3 font-display text-4xl font-semibold tracking-tight text-foreground md:text-6xl">
+              Convierte pacientes interesados en consultas agendadas.
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground">
-              Guías, herramientas y recursos para médicos mexicanos que quieren modernizar su consultorio, atraer más pacientes y optimizar su práctica.
+            <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">
+              Doctor.mx te da perfil verificado, agenda, WhatsApp y seguimiento por $499 MXN/mes o $5,000 MXN/año. Si eres clínica o Enterprise, agenda demo para diseñar captación multi-sede.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg" variant="primary">
+                <Link href="/auth/register?role=doctor">
+                  Comenzar 14 días gratis
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="secondary">
+                <Link href="/contact?intent=clinic-demo">Agendar demo</Link>
+              </Button>
+              <Button asChild size="lg" variant="ghost">
+                <Link href="/contact?intent=sales">Contactar ventas</Link>
+              </Button>
+            </div>
+          </div>
+
+          <Card density="comfortable" className="border-primary/20 bg-primary/5">
+            <p className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">ROI simple</p>
+            <h2 className="mt-2 font-display text-3xl font-semibold tracking-tight text-foreground">
+              Una consulta adicional puede cubrir tu mes.
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              Con una consulta adicional de $500 MXN, el plan mensual de $499 MXN queda cubierto. El resto de consultas nuevas son crecimiento neto para tu práctica.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              {proofPoints.map((point) => (
+                <div key={point.value} className="rounded-xl border border-border bg-card p-3">
+                  <p className="font-display text-2xl font-semibold text-foreground">{point.value}</p>
+                  <p className="text-xs font-semibold text-primary">{point.label}</p>
+                  <p className="mt-1 text-xs leading-5 text-muted-foreground">{point.detail}</p>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      <section className="editorial-shell py-12 md:py-16">
+        <div className="grid gap-4 md:grid-cols-3">
+          {steps.map((step, index) => (
+            <Card key={step.title} density="comfortable">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                <step.icon className="h-5 w-5" />
+              </div>
+              <p className="mt-4 text-xs font-semibold uppercase tracking-[0.14em] text-primary">Paso {index + 1}</p>
+              <h3 className="mt-1 font-display text-xl font-semibold text-foreground">{step.title}</h3>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">{step.body}</p>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-card py-12 md:py-16">
+        <div className="editorial-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary">Alternativa a Doctoralia</p>
+            <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
+              Precio claro, verificación y ruta comercial para clínicas.
+            </h2>
+            <p className="mt-3 text-sm leading-6 text-muted-foreground">
+              Mantén tu alta médica simple con $499 MXN/mes, muestra seguridad y cédula verificada, y escala a un flujo Enterprise cuando necesites varias sedes o equipos.
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Resource Grid */}
-      <section className="editorial-shell py-12 md:py-16">
-        <div className="mx-auto max-w-5xl">
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {resourceCards.map((resource, i) => (
-              <Card key={i} variant="interactive" density="comfortable" className="flex flex-col">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary">
-                    {resource.icon}
-                  </div>
-                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wide">
-                    {resource.category}
-                  </span>
-                </div>
-                <h3 className="font-display text-lg font-semibold tracking-tight text-foreground">
-                  {resource.title}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">
-                  {resource.description}
-                </p>
-                <div className="mt-4 pt-4 border-t border-border">
-                  <Link
-                    href={resource.href}
-                    className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-primary/80 transition-colors"
-                  >
-                    Leer más
-                    <ArrowRight className="w-4 h-4" />
-                  </Link>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Banner */}
-      <section className="bg-card border-y border-border py-12">
-        <div className="editorial-shell">
-          <div className="mx-auto max-w-4xl grid gap-8 text-center md:grid-cols-3">
-            {[
-              { value: '500+', label: 'Médicos registrados', sublabel: 'En todo México' },
-              { value: '$499', label: 'Precio mensual', sublabel: 'vs $2,400 de Doctoralia' },
-              { value: '14 días', label: 'Prueba gratuita', sublabel: 'Sin tarjeta de crédito' },
-            ].map((stat, i) => (
-              <div key={i}>
-                <p className="font-display text-4xl font-bold text-primary">{stat.value}</p>
-                <p className="mt-2 font-semibold text-foreground">{stat.label}</p>
-                <p className="text-sm text-muted-foreground">{stat.sublabel}</p>
+          <div className="overflow-hidden rounded-[12px] border border-border">
+            {comparisonRows.map((row) => (
+              <div key={row.feature} className="grid grid-cols-[1fr_1fr_1fr] border-b border-border bg-card text-sm last:border-b-0">
+                <div className="p-3 font-medium text-foreground">{row.feature}</div>
+                <div className="border-x border-border p-3 font-semibold text-[hsl(var(--trust))]">{row.doctormx}</div>
+                <div className="p-3 text-muted-foreground">{row.doctoralia}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
+      <section className="editorial-shell py-12 md:py-16">
+        <div className="grid gap-4 md:grid-cols-3">
+          <Card density="comfortable">
+            <TrendingUp className="h-6 w-6 text-primary" />
+            <h3 className="mt-3 font-display text-xl font-semibold text-foreground">ROI que entiende el consultorio</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">Medimos captación, agenda y seguimiento para que veas qué canal produce consultas reales.</p>
+          </Card>
+          <Card density="comfortable">
+            <ShieldCheck className="h-6 w-6 text-primary" />
+            <h3 className="mt-3 font-display text-xl font-semibold text-foreground">Confianza, seguridad y verificación</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">Cédula SEP, médicos verificados y copy claro para que el paciente agende con mayor confianza.</p>
+          </Card>
+          <Card density="comfortable">
+            <MessageSquare className="h-6 w-6 text-primary" />
+            <h3 className="mt-3 font-display text-xl font-semibold text-foreground">Demo o WhatsApp con ventas</h3>
+            <p className="mt-2 text-sm leading-6 text-muted-foreground">Para Clínicas y Enterprise, revisamos volumen, sedes, especialidades y objetivos antes de cotizar.</p>
+          </Card>
+        </div>
+      </section>
+
       <section className="bg-ink py-12 md:py-16">
-        <div className="editorial-shell">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="font-display text-3xl font-semibold tracking-tight text-primary-foreground">
-              ¿Listo para digitalizar tu consultorio?
-            </h2>
-            <p className="mt-4 text-primary-foreground/70">
-              Crea tu perfil verificado en minutos. IA para notas clínicas, pacientes por WhatsApp y videoconsultas incluidas.
-            </p>
-            <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-              <Link
-                href="/connect"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary-foreground px-6 text-sm font-semibold text-ink transition-transform active:scale-[0.98] hover:bg-primary-foreground/90"
-              >
-                Crear perfil verificado gratis
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                href="/alternativa-doctoralia"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-primary-foreground/20 px-6 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10 active:scale-[0.98]"
-              >
-                Comparar con Doctoralia
-              </Link>
-            </div>
-            <p className="mt-4 text-sm text-primary-foreground/50">14 días gratis • $499 MXN/mes después • Cancela cuando quieras</p>
+        <div className="editorial-shell text-center">
+          <h2 className="font-display text-3xl font-semibold tracking-tight text-primary-foreground">
+            ¿Listo para captar más pacientes?
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-primary-foreground/75">
+            Empieza con 14 días gratis. Después: $499 MXN/mes o $5,000 MXN/año. Para clínicas, agenda demo y recibe una propuesta de implementación.
+          </p>
+          <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+            <Link
+              href="/auth/register?role=doctor"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-primary-foreground px-6 text-sm font-semibold text-ink transition-transform active:scale-[0.98] hover:bg-primary-foreground/90"
+            >
+              Comenzar 14 días gratis
+              <CheckCircle className="h-4 w-4" />
+            </Link>
+            <Link
+              href="/contact?intent=clinic-demo"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-primary-foreground/20 px-6 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary-foreground/10 active:scale-[0.98]"
+            >
+              Agendar demo
+            </Link>
           </div>
         </div>
       </section>

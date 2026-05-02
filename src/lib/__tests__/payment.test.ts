@@ -39,6 +39,8 @@ vi.mock('@/lib/notifications', () => ({
 
 vi.mock('@/lib/whatsapp-notifications', () => ({
   sendPaymentReceipt: vi.fn().mockResolvedValue({ success: true }),
+  getPatientPhone: vi.fn().mockResolvedValue('+525511111111'),
+  getDoctorName: vi.fn().mockResolvedValue('Dr. Test'),
 }))
 
 describe('Payment System', () => {

@@ -44,180 +44,15 @@ type DoctorsDirectoryClientProps = {
 }
 
 type DirectoryDoctor = PublicDoctorSummary & {
-  demo?: boolean
   mapPoint?: {
     x: number
     y: number
   }
 }
 
-const demoDoctors: DirectoryDoctor[] = [
-  {
-    id: 'demo-paula-ramirez',
-    demo: true,
-    status: 'approved',
-    bio: 'Dermatologia clinica y acne adulto. Consulta con enfoque claro, seguimiento y plan por escrito.',
-    languages: ['es', 'en'],
-    years_experience: 11,
-    city: 'Ciudad de Mexico',
-    state: 'CDMX',
-    country: 'MX',
-    price_cents: 75000,
-    currency: 'MXN',
-    rating_avg: 4.9,
-    rating_count: 214,
-    license_number: '6785432',
-    video_enabled: true,
-    office_address: 'Polanco, Ciudad de Mexico',
-    offers_video: true,
-    offers_in_person: true,
-    verification: {
-      cedula: '6785432',
-      sep_verified: true,
-      verified_at: '2026-02-18T12:00:00.000Z',
-      institution: 'UNAM',
-    },
-    profile: {
-      id: 'demo-profile-paula',
-      full_name: 'Paula Ramirez',
-      photo_url: 'https://i.pravatar.cc/240?img=47',
-    },
-    specialties: [{ id: 'demo-derma', name: 'Dermatologia', slug: 'dermatologia' }],
-    mapPoint: { x: 47, y: 42 },
-  },
-  {
-    id: 'demo-rodrigo-vazquez',
-    demo: true,
-    status: 'approved',
-    bio: 'Cardiologia preventiva, hipertension y chequeos ejecutivos con lectura simple de resultados.',
-    languages: ['es'],
-    years_experience: 14,
-    city: 'Guadalajara',
-    state: 'Jalisco',
-    country: 'MX',
-    price_cents: 85000,
-    currency: 'MXN',
-    rating_avg: 4.8,
-    rating_count: 187,
-    license_number: '8765431',
-    video_enabled: true,
-    office_address: 'Providencia, Guadalajara',
-    offers_video: true,
-    offers_in_person: true,
-    verification: {
-      cedula: '8765431',
-      sep_verified: true,
-      verified_at: '2026-01-24T12:00:00.000Z',
-      institution: 'UdeG',
-    },
-    profile: {
-      id: 'demo-profile-rodrigo',
-      full_name: 'Rodrigo Vazquez',
-      photo_url: 'https://i.pravatar.cc/240?img=12',
-    },
-    specialties: [{ id: 'demo-cardio', name: 'Cardiologia', slug: 'cardiologia' }],
-    mapPoint: { x: 28, y: 56 },
-  },
-  {
-    id: 'demo-ana-lopez',
-    demo: true,
-    status: 'approved',
-    bio: 'Ginecologia, anticoncepcion y control anual. Atencion cuidadosa para primera consulta.',
-    languages: ['es'],
-    years_experience: 9,
-    city: 'Monterrey',
-    state: 'Nuevo Leon',
-    country: 'MX',
-    price_cents: 72000,
-    currency: 'MXN',
-    rating_avg: 4.9,
-    rating_count: 324,
-    license_number: '11223344',
-    video_enabled: true,
-    office_address: 'San Pedro Garza Garcia, Nuevo Leon',
-    offers_video: true,
-    offers_in_person: true,
-    verification: {
-      cedula: '11223344',
-      sep_verified: true,
-      verified_at: '2026-03-03T12:00:00.000Z',
-      institution: 'ITESM',
-    },
-    profile: {
-      id: 'demo-profile-ana',
-      full_name: 'Ana Lopez',
-      photo_url: 'https://i.pravatar.cc/240?img=32',
-    },
-    specialties: [{ id: 'demo-gine', name: 'Ginecologia', slug: 'ginecologia' }],
-    mapPoint: { x: 62, y: 32 },
-  },
-  {
-    id: 'demo-sofia-herrera',
-    demo: true,
-    status: 'approved',
-    bio: 'Psicologia clinica para ansiedad, estres laboral y terapia breve basada en objetivos.',
-    languages: ['es', 'en'],
-    years_experience: 8,
-    city: 'Ciudad de Mexico',
-    state: 'CDMX',
-    country: 'MX',
-    price_cents: 65000,
-    currency: 'MXN',
-    rating_avg: 4.9,
-    rating_count: 96,
-    license_number: '5544332',
-    video_enabled: true,
-    office_address: 'Roma Norte, Ciudad de Mexico',
-    offers_video: true,
-    offers_in_person: true,
-    verification: {
-      cedula: '5544332',
-      sep_verified: true,
-      verified_at: '2026-02-02T12:00:00.000Z',
-      institution: 'Universidad Iberoamericana',
-    },
-    profile: {
-      id: 'demo-profile-sofia',
-      full_name: 'Sofia Herrera',
-      photo_url: 'https://i.pravatar.cc/240?img=49',
-    },
-    specialties: [{ id: 'demo-psico', name: 'Psicologia', slug: 'psicologia' }],
-    mapPoint: { x: 51, y: 52 },
-  },
-  {
-    id: 'demo-jorge-ramirez',
-    demo: true,
-    status: 'approved',
-    bio: 'Medicina interna para diagnostico integral, diabetes, tiroides y sintomas persistentes.',
-    languages: ['es'],
-    years_experience: 16,
-    city: 'Puebla',
-    state: 'Puebla',
-    country: 'MX',
-    price_cents: 70000,
-    currency: 'MXN',
-    rating_avg: 4.8,
-    rating_count: 132,
-    license_number: '9988776',
-    video_enabled: true,
-    office_address: 'Angelopolis, Puebla',
-    offers_video: true,
-    offers_in_person: true,
-    verification: {
-      cedula: '9988776',
-      sep_verified: true,
-      verified_at: '2026-01-09T12:00:00.000Z',
-      institution: 'BUAP',
-    },
-    profile: {
-      id: 'demo-profile-jorge',
-      full_name: 'Jorge Ramirez',
-      photo_url: 'https://i.pravatar.cc/240?img=15',
-    },
-    specialties: [{ id: 'demo-interna', name: 'Medicina interna', slug: 'medicina-interna' }],
-    mapPoint: { x: 57, y: 61 },
-  },
-]
+const leadCaptureHref = '/contact?intent=patient-waitlist'
+const nextStepLabels = ['Ver horarios reales al agendar', 'Confirmar modalidad', 'Recibir aviso de disponibilidad']
+const upcomingFilterLabels = ['Disponible hoy', 'Pago online', 'Acepta seguro']
 
 const demoSpecialties: Specialty[] = [
   { id: 'demo-derma', name: 'Dermatologia', slug: 'dermatologia' },
@@ -362,6 +197,20 @@ function DirectoryFilterRail({
 
           <div className="space-y-2">
             <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
+              Conveniencia
+            </p>
+            <div className="grid grid-cols-2 gap-2 lg:grid-cols-1">
+              {upcomingFilterLabels.map((label) => (
+                <FilterChip key={label} label={`${label} (próximamente)`} fullWidth onClick={() => undefined} />
+              ))}
+            </div>
+            <p className="text-[11px] leading-4 text-[hsl(var(--public-muted))]">
+              Estos filtros son informativos mientras conectamos agenda, pago y seguros.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--public-muted))]">
               Especialidad
             </p>
             <div className="grid grid-cols-2 gap-2 lg:grid-cols-1">
@@ -462,6 +311,9 @@ function MobileFilterStrip({
             )
           }
         />
+        {upcomingFilterLabels.map((label) => (
+          <FilterChip key={label} label={`${label} próximamente`} onClick={() => undefined} />
+        ))}
         {specialties.slice(0, 5).map((specialty) => (
           <FilterChip
             key={specialty.id}
@@ -526,13 +378,7 @@ function getDisplayDoctors(doctors: PublicDoctorSummary[], params: PageParams): 
         }
       : undefined,
   }))
-  const liveIds = new Set(liveDoctors.map((doctor) => doctor.id))
-  const matchingDemoDoctors = demoDoctors
-    .filter((doctor) => !liveIds.has(doctor.id))
-    .filter((doctor) => matchesDirectoryParams(doctor, params))
-
-  if (liveDoctors.length >= 5) return liveDoctors
-  return [...liveDoctors, ...matchingDemoDoctors].slice(0, 7)
+  return liveDoctors.filter((doctor) => matchesDirectoryParams(doctor, params))
 }
 
 function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
@@ -542,8 +388,8 @@ function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
   const isVerified = Boolean(verification?.sep_verified)
   const verifiedDate = verification?.verified_at ? new Date(verification.verified_at) : null
   const hasVerificationDetails = Boolean(verification?.cedula && verifiedDate)
-  const profileHref = doctor.demo ? '/ai-consulta' : `/doctors/${doctor.id}`
-  const bookingHref = doctor.demo ? '/ai-consulta' : `/book/${doctor.id}`
+  const profileHref = `/doctors/${doctor.id}`
+  const bookingHref = `/book/${doctor.id}`
   const specialty = doctor.specialties[0]?.name || 'Especialidad médica'
   const location = [doctor.office_address || doctor.city, doctor.state].filter(Boolean).join(', ')
 
@@ -582,11 +428,6 @@ function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
                     Aprobado
                   </Badge>
                 )}
-                {doctor.demo ? (
-                  <Badge variant="outline" className="rounded-[6px] px-2 py-0.5 text-[11px] normal-case tracking-normal">
-                    Demo
-                  </Badge>
-                ) : null}
               </div>
 
               <p className="mt-0.5 text-sm text-[hsl(var(--public-muted))]">
@@ -649,12 +490,12 @@ function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
                     Ver disponibilidad
                   </p>
                   <p className="mt-0.5 text-xs text-[hsl(var(--public-muted))] lg:hidden">
-                    Horarios al abrir agenda
+                    Horarios reales al abrir la agenda
                   </p>
                 </div>
                 <Button asChild variant="primary" size="sm" className="shrink-0 rounded-[8px] px-3 lg:hidden">
                   <Link href={bookingHref}>
-                    {doctor.demo ? 'Orientarme' : 'Agendar'}
+                    Agendar cita
                     <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </Link>
                 </Button>
@@ -675,8 +516,18 @@ function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
               </div>
               <p className="mt-3 hidden items-center gap-1.5 text-xs text-[hsl(var(--public-muted))] lg:flex">
                 <CalendarDays className="h-3.5 w-3.5" />
-                Horarios exactos al abrir agenda
+                Horarios reales al abrir la agenda
               </p>
+              <div className="mt-2 flex flex-wrap gap-1.5">
+                {nextStepLabels.map((step) => (
+                  <span
+                    key={step}
+                    className="rounded-[7px] border border-[hsl(var(--brand-leaf)/0.24)] bg-[hsl(var(--brand-leaf)/0.08)] px-2 py-1 text-[11px] font-semibold text-[hsl(var(--public-ink))]"
+                  >
+                    {step}
+                  </span>
+                ))}
+              </div>
             </div>
 
             <div>
@@ -688,14 +539,14 @@ function DoctorCard({ doctor }: { doctor: DirectoryDoctor }) {
               </div>
               <div className="grid grid-cols-2 gap-2">
                 <Button asChild variant="secondary" size="sm" className="w-full rounded-[8px]">
-                <Link href={profileHref}>Ver perfil</Link>
-              </Button>
+                  <Link href={profileHref}>Ver perfil</Link>
+                </Button>
                 <Button asChild variant="primary" size="sm" className="hidden w-full rounded-[8px] lg:inline-flex">
-                <Link href={bookingHref}>
-                  {doctor.demo ? 'Orientarme' : 'Agendar cita'}
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </Button>
+                  <Link href={bookingHref}>
+                    Agendar cita
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -800,7 +651,7 @@ function DoctorsMap({ doctors }: { doctors: DirectoryDoctor[] }) {
           {pinnedDoctors.slice(0, 4).map((doctor, index) => (
             <Link
               key={doctor.id}
-              href={doctor.demo ? '/ai-consulta' : `/doctors/${doctor.id}`}
+              href={`/doctors/${doctor.id}`}
               className="grid grid-cols-[1.5rem_1fr_auto] items-center gap-3 px-3 py-2.5 text-sm transition-colors hover:bg-[hsl(var(--surface-tint))]"
             >
               <span className="flex h-6 w-6 items-center justify-center rounded-[7px] bg-[hsl(var(--surface-tint))] text-xs font-semibold text-[hsl(var(--brand-ocean))]">
@@ -832,7 +683,6 @@ export function DoctorsDirectoryClient({
   const [sortValue, setSortValue] = useState<PageParams['sortBy']>(params.sortBy || 'relevance')
   const displayDoctors = useMemo(() => getDisplayDoctors(doctors, params), [doctors, params])
   const displaySpecialties = specialties.length > 0 ? specialties : demoSpecialties
-  const hasDemoDoctors = displayDoctors.some((doctor) => doctor.demo)
 
   const buildQuery = (updates: Record<string, string | undefined>) => {
     const sp = new URLSearchParams()
@@ -950,12 +800,6 @@ export function DoctorsDirectoryClient({
       </section>
 
       <main className="editorial-shell py-3 sm:py-4">
-        {hasDemoDoctors ? (
-          <div className="mb-3 rounded-[8px] border border-[hsl(var(--brand-ocean)/0.16)] bg-[hsl(var(--surface-tint))] px-3 py-2 text-xs text-[hsl(var(--public-muted))]">
-            Doctores demo visibles hasta completar el catalogo real.
-          </div>
-        ) : null}
-
         <MobileFilterStrip
           specialties={displaySpecialties}
           params={params}
@@ -991,8 +835,11 @@ export function DoctorsDirectoryClient({
                 </div>
                 <h2 className="text-lg font-semibold text-[hsl(var(--public-ink))]">No encontramos doctores</h2>
                 <p className="mx-auto mt-2 max-w-lg text-sm leading-6 text-[hsl(var(--public-muted))]">
-                  Prueba con otra especialidad, ciudad o modalidad.
+                  Prueba con otra especialidad, ciudad o modalidad. Te avisamos cuando haya más doctores disponibles para tu búsqueda.
                 </p>
+                <Button asChild variant="primary" size="sm" className="mt-4 rounded-[8px]">
+                  <Link href={leadCaptureHref}>Únete a la lista de espera</Link>
+                </Button>
               </Card>
             ) : (
               displayDoctors.map((doctor) => <DoctorCard key={doctor.id} doctor={doctor} />)

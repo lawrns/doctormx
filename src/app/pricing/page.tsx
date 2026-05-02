@@ -80,75 +80,39 @@ type DoctorPlan = {
 
 const doctorPlans: DoctorPlan[] = [
   {
-    id: 'starter',
-    name: 'Esencial',
-    monthlyPrice: 790,
-    annualPrice: 657,
-    cadence: 'MXN / mes',
-    description: 'Perfil profesional, reserva de citas y visibilidad para empezar a recibir pacientes. Sin AI Copilot.',
-    cta: 'Comenzar prueba gratis',
-    href: '/auth/register?role=doctor',
-    features: [
-      'Perfil profesional verificable',
-      'Reserva de citas',
-      '30 pacientes por WhatsApp',
-      'Analítica básica',
-      'Soporte por correo',
-    ],
-    excludedFeatures: [
-      'AI Copilot',
-      'Análisis de imágenes',
-      'Posicionamiento prioritario',
-      'Listado destacado',
-      'White label',
-      'Acceso API',
-    ],
-  },
-  {
-    id: 'pro',
-    name: 'Profesional',
-    monthlyPrice: 1490,
-    annualPrice: 1237,
-    cadence: 'MXN / mes',
-    description: 'Todo en Esencial más IA para notas clínicas, análisis de imágenes y mayor alcance con pacientes.',
+    id: 'doctor',
+    name: 'Médico independiente',
+    monthlyPrice: 499,
+    annualPrice: 5000,
+    cadence: 'MXN',
+    description: 'Un plan simple para captar pacientes, digitalizar tu agenda y operar con confianza desde el primer día.',
     cta: 'Comenzar prueba gratis',
     href: '/auth/register?role=doctor',
     featured: true,
     features: [
-      'Todo en Esencial',
-      'AI Copilot (50 consultas)',
-      '100 pacientes por WhatsApp',
-      'Posicionamiento prioritario',
-      'Análisis de imágenes (20)',
-      'Soporte por chat',
-    ],
-    excludedFeatures: [
-      'Listado destacado',
-      'White label',
-      'Acceso API',
-    ],
-  },
-  {
-    id: 'elite',
-    name: 'Premium',
-    monthlyPrice: 2990,
-    annualPrice: 2482,
-    cadence: 'MXN / mes',
-    description: 'Máxima visibilidad, IA ilimitada y herramientas avanzadas para consultorios de alto volumen.',
-    cta: 'Comenzar prueba gratis',
-    href: '/auth/register?role=doctor',
-    features: [
-      'Todo en Pro',
-      'AI Copilot ilimitado',
-      'Análisis de imágenes ilimitado',
-      'Listado destacado',
-      'White label',
-      'Acceso API',
-      'Soporte telefónico prioritario',
+      'Perfil profesional verificable con cédula SEP',
+      'Agenda y solicitudes de cita según configuración',
+      'Captura de pacientes con WhatsApp y formularios',
+      'Expediente y seguimiento básico cuando esté habilitado',
+      '14 días gratis sin tarjeta de crédito',
     ],
     excludedFeatures: [],
   },
 ]
+
+const clinicPlan = {
+  name: 'Clínicas y Enterprise',
+  price: 'A la medida',
+  description: 'Para grupos médicos, clínicas multi-sede y equipos que necesitan alto volumen, reportes, capacitación y acompañamiento comercial.',
+  cta: 'Agendar demo',
+  href: '/contact?intent=clinic-demo',
+  features: [
+    'Onboarding para varios médicos y sedes',
+    'Flujos de captación y seguimiento por WhatsApp',
+    'Reportes de captación y conversión por sede',
+    'Soporte prioritario, seguridad y verificación operativa',
+  ],
+}
 
 const faqs = [
   {
@@ -157,7 +121,7 @@ const faqs = [
   },
   {
     q: '¿Qué pasa si no tengo pacientes el primer mes?',
-    a: 'Te ayudamos a optimizar tu perfil para aparecer en búsquedas. Además, el Dr. Simeón refiere pacientes a médicos verificados.',
+    a: 'Te ayudamos a optimizar tu perfil para aparecer en búsquedas y capturar intención de pacientes. No prometemos volumen fijo sin revisar especialidad, ciudad y disponibilidad.',
   },
   {
     q: '¿Cómo funciona la verificación de cédula profesional?',
@@ -174,16 +138,15 @@ const faqs = [
 ]
 
 const comparisonFeatures = [
+  { key: 'Precio', starter: '$499 MXN/mes', pro: '$5,000 MXN/año', elite: 'A la medida' },
   { key: 'Perfil profesional', starter: true, pro: true, elite: true },
-  { key: 'Reserva de citas', starter: true, pro: true, elite: true },
-  { key: 'Pacientes WhatsApp', starter: '30', pro: '100', elite: 'Ilimitado' },
-  { key: 'AI Copilot', starter: false, pro: '50 consultas', elite: 'Ilimitado' },
-  { key: 'Análisis de imágenes', starter: false, pro: '20', elite: 'Ilimitado' },
-  { key: 'Posicionamiento prioritario', starter: false, pro: true, elite: true },
-  { key: 'Listado destacado', starter: false, pro: false, elite: true },
-  { key: 'White label', starter: false, pro: false, elite: true },
-  { key: 'Acceso API', starter: false, pro: false, elite: true },
-  { key: 'Soporte', starter: 'Correo', pro: 'Chat', elite: 'Teléfono prioritario' },
+  { key: 'Solicitudes de cita', starter: true, pro: true, elite: true },
+  { key: 'Captura por WhatsApp', starter: true, pro: true, elite: true },
+  { key: 'Expediente y seguimiento básico', starter: 'Según configuración', pro: 'Según configuración', elite: true },
+  { key: 'Verificación de cédula SEP', starter: true, pro: true, elite: true },
+  { key: 'Reportes multi-sede', starter: false, pro: false, elite: true },
+  { key: 'Acompañamiento comercial', starter: false, pro: false, elite: true },
+  { key: 'Soporte', starter: 'Correo', pro: 'Correo', elite: 'Prioritario' },
 ]
 
 function FeatureIcon({ included }: { included: boolean }) {
@@ -250,6 +213,7 @@ function DoctorPlanCard({
   isAnnual: boolean
 }) {
   const displayPrice = isAnnual ? plan.annualPrice : plan.monthlyPrice
+  const displayCadence = isAnnual ? 'MXN / año' : 'MXN / mes'
 
   return (
     <article
@@ -277,11 +241,11 @@ function DoctorPlanCard({
             <span className="font-display text-3xl font-semibold tracking-tight text-foreground">
               ${displayPrice.toLocaleString('es-MX')}
             </span>
-            <span className="text-xs text-muted-foreground">MXN / mes</span>
+            <span className="text-xs text-muted-foreground">{displayCadence}</span>
           </div>
           {isAnnual && (
             <p className="mt-1 text-xs text-[hsl(var(--trust))]">
-              Ahorras ${(plan.monthlyPrice * 12 - plan.annualPrice * 12).toLocaleString('es-MX')} MXN al año
+              Ahorras ${(plan.monthlyPrice * 12 - plan.annualPrice).toLocaleString('es-MX')} MXN al año
             </p>
           )}
         </div>
@@ -339,10 +303,17 @@ export default function PricingPage() {
               </h1>
             </div>
             <p className="max-w-2xl text-base leading-7 text-muted-foreground">
-              Elige el plan que mejor se adapte a tu consultorio. Todos los planes incluyen prueba
-              gratis de 14 días sin tarjeta de crédito.
+              Empieza con $499 MXN/mes o $5,000 MXN/año. Con una consulta adicional al mes normalmente recuperas la inversión; clínicas y equipos Enterprise pueden agendar demo para un plan a la medida.
             </p>
           </motion.div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button asChild variant="primary">
+              <Link href="/auth/register?role=doctor">Comenzar 14 días gratis</Link>
+            </Button>
+            <Button asChild variant="secondary">
+              <Link href="/contact?intent=clinic-demo">Agendar demo</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -371,7 +342,7 @@ export default function PricingPage() {
                 <Switch
                   checked={isAnnual}
                   onCheckedChange={setIsAnnual}
-                  aria-label="Toggle annual billing"
+                  aria-label="Cambiar facturación anual"
                 />
                 <span
                   className={`text-sm font-medium ${
@@ -383,10 +354,53 @@ export default function PricingPage() {
               </div>
             </div>
 
-            <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            <div className="mt-6 grid gap-4 lg:grid-cols-2">
               {doctorPlans.map((plan) => (
                 <DoctorPlanCard key={plan.id} plan={plan} isAnnual={isAnnual} />
               ))}
+              <article className="relative flex flex-col rounded-[12px] border border-border bg-card p-[var(--space-4)]">
+                <div className="flex-1">
+                  <Badge variant="secondary" className="text-xs">Alto volumen</Badge>
+                  <h3 className="mt-3 font-display text-lg font-semibold tracking-tight text-foreground">
+                    {clinicPlan.name}
+                  </h3>
+                  <p className="mt-1 text-sm leading-6 text-muted-foreground">{clinicPlan.description}</p>
+                  <div className="mt-4 border-t border-border pt-4">
+                    <p className="font-display text-3xl font-semibold tracking-tight text-foreground">{clinicPlan.price}</p>
+                    <p className="mt-1 text-xs text-[hsl(var(--trust))]">Incluye demo comercial, ROI y configuración por sede</p>
+                  </div>
+                  <ul className="mt-4 space-y-2">
+                    {clinicPlan.features.map((feature) => (
+                      <li key={feature} className="flex gap-2 text-sm leading-5 text-muted-foreground">
+                        <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-[hsl(var(--trust))]" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <Button asChild variant="secondary" className="mt-6 w-full" size="sm">
+                  <Link href={clinicPlan.href}>
+                    {clinicPlan.cta}
+                    <ArrowRight className="h-3.5 w-3.5" />
+                  </Link>
+                </Button>
+              </article>
+            </div>
+          </div>
+
+          {/* ROI and trust */}
+          <div className="grid gap-4 md:grid-cols-3">
+            <div className="rounded-[12px] border border-border bg-card p-5">
+              <p className="font-semibold text-foreground">ROI claro</p>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">Una consulta adicional al mes puede cubrir el plan de $499 MXN y dejar margen para crecer.</p>
+            </div>
+            <div className="rounded-[12px] border border-border bg-card p-5">
+              <p className="font-semibold text-foreground">Alternativa a Doctoralia</p>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">Perfil verificado, agenda, WhatsApp y seguimiento en una experiencia enfocada en conversión.</p>
+            </div>
+            <div className="rounded-[12px] border border-border bg-card p-5">
+              <p className="font-semibold text-foreground">Seguridad y verificación</p>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">Validación de cédula SEP, médicos verificados y procesos diseñados para proteger datos clínicos.</p>
             </div>
           </div>
 
@@ -400,9 +414,9 @@ export default function PricingPage() {
                 <TableHeader>
                   <TableRow>
                     <TableHead className="w-[280px]">Funcionalidad</TableHead>
-                    <TableHead className="text-center">Esencial</TableHead>
-                    <TableHead className="text-center bg-primary/5">Profesional</TableHead>
-                    <TableHead className="text-center">Premium</TableHead>
+                    <TableHead className="text-center">Mensual</TableHead>
+                    <TableHead className="text-center bg-primary/5">Anual</TableHead>
+                    <TableHead className="text-center">Clínicas</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
