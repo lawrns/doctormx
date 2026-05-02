@@ -111,7 +111,10 @@ export function HeroSection({ trustData }: HeroSectionProps) {
 
             <h1 className="font-display text-[clamp(2.25rem,5vw,4.5rem)] font-semibold leading-[0.98] tracking-[-0.055em] text-white">
               No sabes si es estrés, migraña o algo peor.{' '}
-              <span className="font-serif italic tracking-[-0.04em] text-primary">Dr. Simeón te orienta en 2 minutos.</span>
+              <span
+                className="shimmer-text font-serif italic tracking-[-0.04em] text-[#7B9EFF]"
+                data-text="Dr. Simeón te orienta en 2 minutos."
+              >Dr. Simeón te orienta en 2 minutos.</span>
             </h1>
 
             <p className="mt-5 max-w-[42rem] text-base leading-6 text-white/74 sm:mt-6 sm:text-lg sm:leading-7">

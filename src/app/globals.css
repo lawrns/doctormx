@@ -480,6 +480,36 @@
   50% { transform: scale(1.02); }
 }
 
+@keyframes simeon-shimmer {
+  0%   { background-position: -120% center; }
+  60%  { background-position:  120% center; }
+  100% { background-position:  120% center; }
+}
+.shimmer-text {
+  position: relative;
+  display: inline-block;
+}
+.shimmer-text::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent              38%,
+    rgba(180, 210, 255, 0.55) 45%,
+    rgba(255, 255, 255, 0.80) 50%,
+    rgba(180, 210, 255, 0.55) 55%,
+    transparent              62%
+  );
+  background-size: 220% 100%;
+  background-position: -120% center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: simeon-shimmer 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+
 .animate-fade-in {
   animation: fadeIn 200ms ease-out;
 }
