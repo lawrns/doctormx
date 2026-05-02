@@ -62,7 +62,7 @@ export function FeaturesSection() {
               </p>
 
             <div className="mt-7 hidden max-w-sm border-t border-border pt-5 lg:block">
-              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--trust))]">
+              <p className="font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-[hsl(var(--brand-ocean))]">
                 IA con límites clínicos
               </p>
               <p className="mt-2 text-sm leading-6 text-muted-foreground">

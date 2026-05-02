@@ -30,18 +30,18 @@ export const metadata: Metadata = {
 
 const colors = [
   { name: 'Ink', value: '#0A1533', token: '--brand-ink', text: 'text-white' },
-  { name: 'Blue 700', value: '#0B5FB8', token: '--brand-ocean dark', text: 'text-white' },
-  { name: 'Blue 600', value: '#0D72D6', token: '--brand-ocean / vital', text: 'text-white' },
-  { name: 'Blue 500', value: '#2688E6', token: '--ring', text: 'text-white' },
-  { name: 'Blue 300', value: '#8FC4FF', token: '--brand-sky', text: 'text-[#071a4e]' },
-  { name: 'Soft Blue', value: '#E8F3FF', token: '--surface-tint', text: 'text-[#071a4e]' },
+  { name: 'Ocean 700', value: '#1735A1', token: '--interactive-hover', text: 'text-white' },
+  { name: 'Ocean 600', value: '#1A3CB7', token: '--brand-ocean / --interactive', text: 'text-white' },
+  { name: 'Focus Blue', value: '#3761F6', token: '--ring', text: 'text-white' },
+  { name: 'Sky 300', value: '#6190FF', token: '--brand-sky', text: 'text-white' },
+  { name: 'Ocean Tint', value: '#EBF1FF', token: '--surface-tint', text: 'text-[#071a4e]' },
   { name: 'Surface', value: '#FFFFFF', token: '--card', text: 'text-[#071a4e]' },
   { name: 'Background', value: '#F4F5F8', token: '--background', text: 'text-[#071a4e]' },
   { name: 'Border', value: '#DDE1EC', token: '--border', text: 'text-[#071a4e]' },
   { name: 'Muted', value: '#5C6783', token: '--muted-foreground', text: 'text-white' },
   { name: 'Gold', value: '#F4A736', token: '--brand-gold', text: 'text-[#071a4e]' },
   { name: 'Coral', value: '#FF5A3D', token: '--destructive', text: 'text-white' },
-  { name: 'No Green', value: '#0D72D6', token: 'success mapped blue', text: 'text-white' },
+  { name: 'Trust Green', value: '#1BA766', token: '--trust / state only', text: 'text-white' },
 ]
 
 const principles = [
@@ -55,7 +55,7 @@ const principles = [
   },
   {
     title: 'Premium clinical calm',
-    body: 'Deep navy, softer medical blue, cool grays, white space, and real human presence. No green brand accents.',
+    body: 'Deep navy, historical ocean blue, cool grays, white space, and real human presence. Green is reserved for completed, verified, or successful states.',
   },
   {
     title: 'Data honesty',
@@ -101,7 +101,7 @@ const spacing = [
 
 const doRules = [
   'Primary public CTA above the fold is “Hablar con Dr. Simeón”.',
-  'Green is not a brand color or success color; use soft medical blue for positive verification.',
+  'Green is reserved for completed, verified, or successful states; brand, AI, support, and editorial accents stay ocean blue.',
   'Cards must earn their border/shadow through hierarchy or containment.',
   'Every doctor card needs photo, specialty, city, rating, price, modality, and verification affordance when available.',
   'Use real controls for filters; do not disguise navigation as checkbox inputs.',
@@ -193,7 +193,7 @@ export default function DesignSystemPage() {
 
       <section className="border-y border-[#d9e3f5] bg-white py-12 sm:py-16">
         <div className="editorial-shell">
-          <SectionHeading eyebrow="02 / Color" title="Softer blue is the brand. Green is not." />
+          <SectionHeading eyebrow="02 / Color" title="Ocean blue is the brand. Green is state-only." />
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6">
             {colors.map((color) => (
               <div key={color.name} className="overflow-hidden rounded-[8px] border border-[#d9e3f5] bg-white">

@@ -117,7 +117,7 @@ function AssistantTypingBubble({ reducedMotion }: { reducedMotion: boolean }) {
             {[0, 1, 2].map((index) => (
               <motion.span
                 key={index}
-                className="size-1.5 rounded-full bg-[hsl(var(--trust))]"
+                className="size-1.5 rounded-full bg-[hsl(var(--brand-ocean))]"
                 animate={reducedMotion ? undefined : { y: [0, -3, 0], opacity: [0.4, 1, 0.4] }}
                 transition={{ duration: 0.9, repeat: Infinity, delay: index * 0.13, ease: 'easeInOut' }}
               />
@@ -180,7 +180,7 @@ function TypewriterText({
       {active && !reducedMotion ? (
         <motion.span
           aria-hidden="true"
-          className="ml-0.5 inline-block h-4 w-px translate-y-0.5 bg-[hsl(var(--trust))]"
+          className="ml-0.5 inline-block h-4 w-px translate-y-0.5 bg-[hsl(var(--brand-ocean))]"
           animate={{ opacity: [0.25, 1, 0.25] }}
           transition={{ duration: 0.85, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -214,7 +214,7 @@ function AssistantBubble({
       </div>
       <div className="min-w-0 max-w-[720px] rounded-xl border border-border bg-card px-4 py-3 shadow-sm">
         <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Dr. Simeon AI</span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--brand-ocean))]">Dr. Simeon AI</span>
           <span className="text-[10px] text-muted-foreground">orientación inicial, no diagnóstico</span>
         </div>
         <TypewriterText
@@ -272,7 +272,7 @@ function LeftRail({
             <Image src="/images/simeon.png" alt="Dr. Simeon AI" fill sizes="44px" className="object-cover object-top" priority />
           </div>
           <div className="min-w-0">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">asistente de orientación clínica inicial</p>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--brand-ocean))]">asistente de orientación clínica inicial</p>
             <h2 className="font-display text-lg font-semibold tracking-tight text-foreground">Dr. Simeon AI</h2>
           </div>
         </div>
@@ -295,7 +295,7 @@ function LeftRail({
               onClick={() => onQuickStart(prompt)}
               className="flex items-start gap-3 rounded-lg border border-border bg-background px-3 py-2.5 text-left transition-colors hover:bg-secondary/70 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-[hsl(var(--trust))]" />
+              <span className="mt-2 size-1.5 shrink-0 rounded-full bg-[hsl(var(--brand-ocean))]" />
               <span className="text-sm leading-5 text-foreground">{prompt}</span>
             </button>
           ))}
@@ -319,7 +319,7 @@ function CaseRail({
   return (
     <aside className="flex h-full min-h-0 flex-col border-l border-border bg-card/90 p-4">
       <div className="rounded-xl border border-border bg-background p-4 shadow-sm">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Contexto del caso</p>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--brand-ocean))]">Contexto del caso</p>
         <div className="mt-4 grid gap-3">
           <CaseItem icon={User} label="Nombre" value={summary.firstName || 'Por preguntar'} />
           <CaseItem icon={Stethoscope} label="Motivo" value={summary.chiefComplaint || 'Pendiente'} />
@@ -638,9 +638,9 @@ export function DrSimeonProtocolChat({
                 )}
                 <div className="rounded-xl border border-border bg-background p-2.5 shadow-sm transition-colors focus-within:border-ink/35 focus-within:ring-2 focus-within:ring-ink/10 sm:p-3">
                   <div className="mb-2 flex items-start gap-2 border-b border-border pb-2">
-                    <Stethoscope className="mt-0.5 size-3.5 shrink-0 text-[hsl(var(--trust))]" />
+                    <Stethoscope className="mt-0.5 size-3.5 shrink-0 text-[hsl(var(--brand-ocean))]" />
                     <div className="min-w-0">
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Siguiente pregunta</p>
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--brand-ocean))]">Siguiente pregunta</p>
                       <p className="mt-0.5 line-clamp-2 text-xs leading-5 text-muted-foreground">{summary.nextQuestion}</p>
                     </div>
                   </div>

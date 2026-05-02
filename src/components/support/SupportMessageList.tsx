@@ -75,7 +75,7 @@ export function SupportMessageList({ messages }: SupportMessageListProps) {
                 ) : null}
                 <div className="min-w-0 max-w-[82%]">
                   {showAssistantIdentity ? (
-                    <div className="mb-1.5 ml-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--trust))]">
+                    <div className="mb-1.5 ml-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[hsl(var(--brand-ocean))]">
                       Dr. Simeon
                     </div>
                   ) : null}
