@@ -8,11 +8,11 @@ import { Badge } from '@/components/ui/badge'
 import { CheckCircle, XCircle, Zap, MessageCircle, Video, Shield, ArrowRight, Star } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Doctor.mx: La Mejor Alternativa a Doctoralia para Médicos Mexicanos | Desde $790/mes',
+  title: 'Doctor.mx: La Mejor Alternativa a Doctoralia para Médicos Mexicanos | Desde $499/mes',
   description: '¿Buscas una alternativa a Doctoralia para tu consultorio? Doctor.mx ofrece IA para notas clínicas, pacientes por WhatsApp y verificación SEP por una fracción del costo. Prueba 14 días gratis.',
   openGraph: {
     title: 'Doctor.mx: Alternativa a Doctoralia para Médicos Mexicanos',
-    description: 'Perfil verificado, IA clínica, pacientes por WhatsApp y videoconsultas por $790/mes. 14 días gratis.',
+    description: 'Perfil verificado, IA clínica, pacientes por WhatsApp y videoconsultas por $499/mes. 14 días gratis.',
     type: 'website',
     locale: 'es_MX',
   },
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 }
 
 const comparisonRows = [
-  { feature: 'Precio mensual', doctormx: '$790 MXN', doctoralia: '$2,400 MXN', doctormxWin: true },
+  { feature: 'Precio mensual', doctormx: '$499 MXN', doctoralia: '$2,400 MXN', doctormxWin: true },
   { feature: 'Verificación de cédula SEP', doctormx: 'Sí', doctoralia: 'No', doctormxWin: true },
   { feature: 'IA para notas clínicas (SOAP)', doctormx: 'Sí', doctoralia: 'No', doctormxWin: true },
   { feature: 'Pacientes por WhatsApp', doctormx: 'Sí', doctoralia: 'No', doctormxWin: true },
@@ -92,7 +92,7 @@ export default function AlternativaDoctoraliaPage() {
               Doctor.mx: La mejor alternativa a Doctoralia para médicos mexicanos
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Perfil verificado, IA para notas clínicas, pacientes por WhatsApp y videoconsultas. Todo por $790/mes en lugar de $2,400.
+              Perfil verificado, IA para notas clínicas, pacientes por WhatsApp y videoconsultas. Todo por $499/mes en lugar de $2,400.
             </p>
             <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <Link href="/connect">
@@ -272,7 +272,7 @@ export default function AlternativaDoctoraliaPage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
-            <p className="mt-4 text-sm text-primary-foreground/50">Desde $790 MXN/mes • Sin compromiso • Cancela cuando quieras</p>
+            <p className="mt-4 text-sm text-primary-foreground/50">Desde $499 MXN/mes • Sin compromiso • Cancela cuando quieras</p>
           </div>
         </div>
       </section>
@@ -289,7 +289,7 @@ export default function AlternativaDoctoraliaPage() {
             description: 'Plataforma para médicos mexicanos con perfil verificado, IA para notas clínicas, pacientes por WhatsApp y videoconsultas.',
             offers: {
               '@type': 'Offer',
-              price: '790',
+              price: '499',
               priceCurrency: 'MXN',
               description: 'Plan mensual para médicos',
             },

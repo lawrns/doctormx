@@ -40,7 +40,8 @@ export function SocialProofBar({ trustData }: SocialProofBarProps) {
         metrics.specialties > 0 ||
         metrics.verifiedDoctors > 0)
   )
-  const fallbackValues = ['Sin inflar', 'Solo reales', 'Activas', 'Cuando existe']
+
+  if (!hasLiveMetrics) return null
 
   return (
     <section className="border-y border-border bg-card py-4" aria-label="Pruebas de confianza de Doctor.mx">
@@ -66,9 +67,7 @@ export function SocialProofBar({ trustData }: SocialProofBarProps) {
                       {item.label}
                     </p>
                     <p className="mt-1 text-2xl font-semibold tracking-tight text-[hsl(var(--public-ink))]">
-                      {hasLiveMetrics && metrics
-                        ? metrics[item.key].toLocaleString('es-MX')
-                        : fallbackValues[index]}
+                      {metrics![item.key].toLocaleString('es-MX')}
                     </p>
                   </div>
                 </div>

@@ -279,7 +279,7 @@ function DoctorPlanCard({
 }
 
 export default function PricingPage() {
-  const [isAnnual, setIsAnnual] = useState(false)
+  const [isAnnual, setIsAnnual] = useState(true)
 
   return (
     <main className="min-h-screen bg-[hsl(var(--surface-soft))]">
@@ -303,7 +303,7 @@ export default function PricingPage() {
               </h1>
             </div>
             <p className="max-w-2xl text-base leading-7 text-muted-foreground">
-              Empieza con $499 MXN/mes o $5,000 MXN/año. Con una consulta adicional al mes normalmente recuperas la inversión; clínicas y equipos Enterprise pueden agendar demo para un plan a la medida.
+              $499 MXN/mes o $5,000 MXN/año. La mayoría de los médicos cubre su suscripción con la primera cita del mes. Clínicas y equipos pueden agendar demo para un plan a la medida.
             </p>
           </motion.div>
           <div className="mt-6 flex flex-wrap gap-3">
@@ -345,11 +345,16 @@ export default function PricingPage() {
                   aria-label="Cambiar facturación anual"
                 />
                 <span
-                  className={`text-sm font-medium ${
+                  className={`inline-flex items-center gap-1.5 text-sm font-medium ${
                     isAnnual ? 'text-foreground' : 'text-muted-foreground'
                   }`}
                 >
                   Anual
+                  {isAnnual && (
+                    <span className="rounded-full bg-[hsl(var(--trust)/0.12)] px-2 py-0.5 text-xs font-semibold text-[hsl(var(--trust))]">
+                      Ahorras $988
+                    </span>
+                  )}
                 </span>
               </div>
             </div>
@@ -392,7 +397,7 @@ export default function PricingPage() {
           <div className="grid gap-4 md:grid-cols-3">
             <div className="rounded-[12px] border border-border bg-card p-5">
               <p className="font-semibold text-foreground">ROI claro</p>
-              <p className="mt-2 text-sm leading-6 text-muted-foreground">Una consulta adicional al mes puede cubrir el plan de $499 MXN y dejar margen para crecer.</p>
+              <p className="mt-2 text-sm leading-6 text-muted-foreground">La mayoría de los médicos cubre su suscripción con la primera cita del mes. El resto es crecimiento.</p>
             </div>
             <div className="rounded-[12px] border border-border bg-card p-5">
               <p className="font-semibold text-foreground">Alternativa a Doctoralia</p>

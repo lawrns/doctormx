@@ -321,10 +321,13 @@ export default function OnboardingForm({ doctor, profile }: OnboardingFormProps)
       </header>
 
       <main className="max-w-3xl mx-auto px-6 py-10">
-        <div className="mb-2">
+        <div className="mb-2 flex items-center justify-between">
           <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">
             Onboarding · Paso {currentStep} de 3
           </span>
+          {currentStep === 1 && (
+            <span className="text-xs text-muted-foreground">~5 minutos en total</span>
+          )}
         </div>
         <h1 className="font-display text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-3">
           {currentStep === 1 && 'Información profesional'}

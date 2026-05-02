@@ -123,25 +123,31 @@ export function HeroSection({ trustData }: HeroSectionProps) {
               <p className="mt-1">Si detectamos señales de alarma, te pedimos acudir a urgencias o hablar con un médico humano.</p>
             </div>
 
-            <div className="mt-6 flex flex-col gap-3 pb-6 sm:flex-row lg:pb-8">
-              <Button asChild size="lg" variant="primary" className="w-full sm:w-auto">
-                <Link href="/ai-consulta">
-                  Hablar con Dr. Simeón
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            <div className="mt-6 pb-6 lg:pb-8">
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Button asChild size="lg" variant="primary" className="w-full sm:w-auto">
+                  <Link href="/ai-consulta">
+                    Hablar con Dr. Simeón
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
+                  <Link href="/doctors">
+                    <Search className="h-4 w-4" aria-hidden="true" />
+                    Ver médicos
+                  </Link>
+                </Button>
+              </div>
+              <div className="mt-4 flex items-center gap-2">
+                <Link
+                  href="/connect"
+                  className="inline-flex items-center gap-1.5 text-sm font-medium text-white/60 transition-colors hover:text-white"
+                >
+                  <Stethoscope className="h-3.5 w-3.5" aria-hidden="true" />
+                  ¿Eres médico? Únete gratis
+                  <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
                 </Link>
-              </Button>
-              <Button asChild size="lg" variant="secondary" className="w-full sm:w-auto">
-                <Link href="/doctors">
-                  <Search className="h-4 w-4" aria-hidden="true" />
-                  Ver médicos
-                </Link>
-              </Button>
-              <Button asChild size="lg" variant="outline-inverse" className="w-full sm:w-auto">
-                <Link href="/sintomas">
-                  <Stethoscope className="h-4 w-4" aria-hidden="true" />
-                  ¿Cuál especialista necesito?
-                </Link>
-              </Button>
+              </div>
             </div>
           </motion.div>
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
@@ -53,6 +53,20 @@ export default function CompleteProfilePage() {
       role: 'patient',
     },
   })
+
+  useEffect(() => {
+    if (!supabase) return
+    const client = supabase
+    async function prefill() {
+      const { data } = await client.auth.getUser()
+      if (!data.user) return
+      const metaName = String(data.user.user_metadata?.full_name ?? data.user.user_metadata?.name ?? '')
+      if (metaName && !form.getValues('fullName')) {
+        form.setValue('fullName', metaName)
+      }
+    }
+    void prefill()
+  }, [supabase, form])
 
   const onSubmit = async (data: ProfileFormValues) => {
     setLoading(true)
@@ -175,25 +189,18 @@ export default function CompleteProfilePage() {
 
         {/* Form Card */}
         <div className="bg-card rounded-2xl border border-border shadow-sm p-8">
-          <h1 className="font-display text-2xl font-bold text-foreground mb-2 text-center">
-            Completa tu perfil
-          </h1>
-          <p className="text-sm text-muted-foreground text-center mb-6">
-            Necesitamos algunos datos para continuar
-          </p>
-
-          <div className="mb-6 grid gap-3">
-            <div className={cn(
-              'rounded-xl border p-3 text-sm',
-              form.watch('role') === 'patient'
-                ? 'bg-muted border-border text-foreground'
-                : 'bg-muted border-border text-foreground'
-            )}>
-              {form.watch('role') === 'patient'
-                ? 'Completa tu perfil para guardar tus citas, consultas y seguimiento en un solo lugar.'
-                : 'Completa tu perfil para continuar con onboarding, verificación y configuración de tu práctica.'}
-            </div>
+          <div className="mb-2 flex items-center justify-between">
+            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">Paso 1 de 3</p>
+            <p className="text-xs text-muted-foreground">~2 minutos</p>
           </div>
+          <h1 className="font-display text-2xl font-bold text-foreground mb-2">
+            Un último paso
+          </h1>
+          <p className="text-sm text-muted-foreground mb-6">
+            {form.watch('role') === 'doctor'
+              ? 'Confirma tu nombre y rol para activar tu perfil de doctor. A continuación completarás tu especialidad y disponibilidad.'
+              : 'Confirma tus datos para guardar citas, consultas y seguimiento en un solo lugar.'}
+          </p>
 
           {error && (
             <div className="mb-4 p-3 bg-destructive/10 border border-destructive/20 rounded-xl text-destructive text-sm">
