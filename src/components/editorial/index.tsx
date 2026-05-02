@@ -52,7 +52,7 @@ export function ChapterHeader({
       )}
     >
       <div className="pt-1">
-        <span className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-[hsl(var(--trust))]">
+        <span className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-[hsl(var(--brand-ocean))]">
           {number}
         </span>
       </div>
@@ -171,7 +171,7 @@ export function PulseDot({ className }: { className?: string }) {
   return (
     <span
       className={cn(
-        'inline-block w-2 h-2 rounded-full bg-[hsl(var(--trust))] animate-pulse',
+        'inline-block w-2 h-2 rounded-full bg-[hsl(var(--brand-ocean))] animate-pulse',
         className
       )}
     />

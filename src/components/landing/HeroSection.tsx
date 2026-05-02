@@ -214,7 +214,7 @@ export function HeroSection({ trustData }: HeroSectionProps) {
 
                     <div className="mt-4 grid gap-2 border-t border-border pt-4 text-xs text-muted-foreground sm:grid-cols-2">
                       <span className="flex items-center gap-1.5">
-                        <Video className="h-3.5 w-3.5 text-[hsl(var(--trust))]" aria-hidden="true" />
+                        <Video className="h-3.5 w-3.5 text-[hsl(var(--brand-ocean))]" aria-hidden="true" />
                         {doctor.offers_video ? 'En línea disponible' : 'Presencial'}
                       </span>
                       <span className="flex items-center gap-1.5">
