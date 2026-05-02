@@ -385,6 +385,9 @@ function RegisterContent() {
               <h1 className="font-display text-2xl font-bold tracking-tight text-foreground">
                 Crear cuenta
               </h1>
+              <p className="text-sm leading-6 text-muted-foreground">
+                Registro seguro: protegemos tus datos personales y de salud. Crear tu cuenta es sin tarjeta; tú decides cuándo publicar o agendar.
+              </p>
             </div>
 
             {/* Step labels */}
@@ -453,7 +456,7 @@ function RegisterContent() {
                           </div>
                           <div className="flex-1">
                             <div className="font-medium text-foreground">Soy paciente</div>
-                            <div className="text-sm text-muted-foreground">Busco atención médica</div>
+                            <div className="text-sm text-muted-foreground">Busco atención médica con datos protegidos</div>
                           </div>
                           <motion.div
                             initial={false}
@@ -476,7 +479,7 @@ function RegisterContent() {
                           </div>
                           <div className="flex-1">
                             <div className="font-medium text-foreground">Soy médico</div>
-                            <div className="text-sm text-muted-foreground">Ofreceré servicios médicos</div>
+                            <div className="text-sm text-muted-foreground">Gana pacientes con perfil verificado y agenda en línea</div>
                           </div>
                           <motion.div
                             initial={false}
@@ -650,7 +653,19 @@ function RegisterContent() {
                       <IconBadge icon={User} size="md" />
                       <h2 className="text-lg font-medium text-foreground">Perfil básico</h2>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-1">Información de contacto (opcional)</p>
+                    <p className="text-sm text-muted-foreground mt-1">
+                      {isDoctor
+                        ? 'Después podrás completar especialidad, cédula y disponibilidad antes de publicar.'
+                        : 'Información de contacto (opcional)'}
+                    </p>
+                    {isDoctor && (
+                      <div className="mt-3 rounded-[10px] border border-[hsl(var(--interactive)/0.2)] bg-[hsl(var(--interactive)/0.05)] p-3 text-left">
+                        <p className="text-sm font-semibold text-foreground">Verificación profesional</p>
+                        <p className="mt-1 text-xs leading-5 text-muted-foreground">
+                          Tu cédula profesional se verificará junto con los datos de práctica antes de mostrar tu perfil a pacientes. El alta inicial es sin tarjeta y sin publicar precios hasta que completes tu perfil.
+                        </p>
+                      </div>
+                    )}
                   </div>
 
                   <Form {...step2Form}>
@@ -748,6 +763,18 @@ function RegisterContent() {
                 </Button>
               )}
             </div>
+
+            <p className="text-center text-xs leading-5 text-muted-foreground">
+              Al continuar aceptas los{' '}
+              <Link href="/terms" className="underline underline-offset-4 hover:text-primary">
+                términos
+              </Link>{' '}
+              y{' '}
+              <Link href="/privacy" className="underline underline-offset-4 hover:text-primary">
+                privacidad
+              </Link>{' '}
+              de Doctor.mx. Usamos seguridad de cuenta para mantener tus datos protegidos.
+            </p>
 
             {/* Login Link */}
             <p className="text-center text-sm text-muted-foreground pt-2">

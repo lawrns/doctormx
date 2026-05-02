@@ -112,7 +112,7 @@ function AssistantTypingBubble({ reducedMotion }: { reducedMotion: boolean }) {
       </div>
       <div className="rounded-xl border border-border bg-card px-4 py-3 shadow-sm">
         <div className="flex items-center gap-3">
-          <span className="text-sm font-medium text-foreground">Dr. Simeon está revisando</span>
+          <span className="text-sm font-medium text-foreground">Dr. Simeon AI está revisando</span>
           <div className="flex items-center gap-1.5" aria-hidden="true">
             {[0, 1, 2].map((index) => (
               <motion.span
@@ -214,8 +214,8 @@ function AssistantBubble({
       </div>
       <div className="min-w-0 max-w-[720px] rounded-xl border border-border bg-card px-4 py-3 shadow-sm">
         <div className="mb-1.5 flex flex-wrap items-center gap-1.5">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Dr. Simeon</span>
-          <span className="text-[10px] text-muted-foreground">Orientación clínica inicial</span>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Dr. Simeon AI</span>
+          <span className="text-[10px] text-muted-foreground">orientación inicial, no diagnóstico</span>
         </div>
         <TypewriterText
           text={message.text}
@@ -269,15 +269,15 @@ function LeftRail({
       <div className="shrink-0 rounded-xl border border-border bg-background p-4 shadow-sm">
         <div className="flex items-center gap-3">
           <div className="relative size-11 overflow-hidden rounded-lg border border-border bg-card">
-            <Image src="/images/simeon.png" alt="Dr. Simeon" fill sizes="44px" className="object-cover object-top" priority />
+            <Image src="/images/simeon.png" alt="Dr. Simeon AI" fill sizes="44px" className="object-cover object-top" priority />
           </div>
           <div className="min-w-0">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">Orientación inicial</p>
-            <h2 className="font-display text-lg font-semibold tracking-tight text-foreground">Dr. Simeon</h2>
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[hsl(var(--trust))]">asistente de orientación clínica inicial</p>
+            <h2 className="font-display text-lg font-semibold tracking-tight text-foreground">Dr. Simeon AI</h2>
           </div>
         </div>
         <p className="mt-3 text-sm leading-6 text-muted-foreground">
-          Primero tu nombre. Luego una sola pregunta clínica a la vez.
+          En 2 minutos ordena tus síntomas para orientar el siguiente paso; no emite diagnóstico ni reemplaza a un médico.
         </p>
       </div>
 
@@ -561,7 +561,7 @@ export function DrSimeonProtocolChat({
             <Badge variant="outline" className="hidden rounded-lg sm:inline-flex">
               Seguridad clínica
             </Badge>
-            {quota ? <span className="font-mono text-xs text-muted-foreground">{quota.remaining} restantes</span> : null}
+            {quota ? <span className="text-xs text-muted-foreground">Orientaciones disponibles: {quota.remaining}</span> : null}
             <Link href={anonymous ? '/' : '/app'} className="hidden items-center gap-1.5 text-xs font-medium text-muted-foreground hover:text-foreground sm:inline-flex">
               <Home className="size-3.5" />
               Inicio
@@ -630,7 +630,7 @@ export function DrSimeonProtocolChat({
               <div className="mx-auto max-w-[760px]">
                 {quotaFull && (
                   <div className="mb-2 rounded-lg border border-border bg-[hsl(var(--surface-soft))] px-4 py-3 flex items-center justify-between gap-3">
-                    <p className="text-xs text-muted-foreground">¿Listo para hablar con un especialista real? Crea tu cuenta gratuita y agenda en minutos.</p>
+                    <p className="text-xs text-muted-foreground">¿Listo para hablar con un especialista real? Crea tu cuenta gratuita para compartir este resumen y agendar con un médico verificado.</p>
                     <Link href="/auth/register" className="shrink-0 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground whitespace-nowrap">
                       Crear cuenta
                     </Link>
@@ -678,7 +678,7 @@ export function DrSimeonProtocolChat({
                     </Button>
                   </div>
                   <p className="mt-2 border-t border-border pt-2 text-[11px] leading-4 text-muted-foreground">
-                    No diagnostica. En emergencias llama al 911.
+                    Dr. Simeon AI es un asistente clínico inicial: no diagnostica. Tu información se trata como privada y confidencial. En emergencias llama al 911.
                   </p>
                 </div>
               </div>

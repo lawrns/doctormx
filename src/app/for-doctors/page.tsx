@@ -33,9 +33,9 @@ import {
 } from '@/components/ui/table'
 
 const trustSignals = [
-  { label: 'Médicos verificados', value: '2,500+' },
-  { label: 'Cumplimiento COFEPRIS', value: 'Certificado' },
   { label: 'Cédula verificada por SEP', value: 'Obligatorio' },
+  { label: 'Publicación después de revisión', value: 'Seguro' },
+  { label: 'Datos clínicos protegidos', value: 'Prioridad' },
 ]
 
 const steps = [
@@ -52,79 +52,77 @@ const steps = [
   {
     icon: Stethoscope,
     title: 'Recibe pacientes',
-    body: 'Tu perfil aparece en búsquedas y el Dr. Simeón refiere pacientes a médicos verificados.',
+    body: 'Tu perfil aparece en búsquedas y puede recibir demanda desde pacientes que buscan orientación y médicos verificados.',
   },
 ]
 
 const testimonials = [
   {
     quote:
-      'Desde que estoy en Doctor.mx recibo al menos 3 pacientes nuevos por semana. La verificación de cédula da mucha confianza.',
-    name: 'Dra. María G.',
-    role: 'Dermatóloga CDMX',
+      'Ejemplo de resultado esperado: perfil verificable, mensajes claros para pacientes y menos fricción para explicar disponibilidad.',
+    name: 'Caso de uso',
+    role: 'Consulta privada',
   },
   {
     quote:
-      'El AI Copilot me ahorra horas de documentación. Las notas clínicas se generan solas durante la consulta.',
-    name: 'Dr. Carlos R.',
-    role: 'Medicina Interna, Monterrey',
+      'La propuesta es operar captación, agenda y seguimiento desde un solo flujo, sin prometer volumen fijo antes de validar la plaza.',
+    name: 'Escenario comercial',
+    role: 'Médico independiente',
   },
   {
     quote:
-      'Pagué Doctoralia por años a $2,400/mes sin ver resultados. Con Doctor.mx pago $999 y tengo más visibilidad.',
-    name: 'Dr. Alejandro V.',
-    role: 'Pediatra, Guadalajara',
+      'El precio de $499 MXN permite probar el canal con bajo riesgo y medir si una consulta adicional cubre la inversión.',
+    name: 'Modelo ROI',
+    role: 'Especialistas en México',
   },
 ]
 
 const comparisonRows = [
-  { feature: 'Precio mensual', doctory: '$499 MXN', doctoralia: '$2,400 MXN' },
+  { feature: 'Precio mensual', doctory: '$499 MXN', doctoralia: '$2,400 MXN aprox.' },
   { feature: 'Perfil profesional', doctory: true, doctoralia: true },
-  { feature: 'Verificación de cédula (SEP)', doctory: true, doctoralia: false },
-  { feature: 'Pacientes por WhatsApp', doctory: true, doctoralia: false },
-  { feature: 'AI Copilot para notas clínicas', doctory: true, doctoralia: false },
-  { feature: 'Posicionamiento prioritario', doctory: true, doctoralia: true },
-  { feature: 'Análisis de imágenes con IA', doctory: true, doctoralia: false },
-  { feature: 'Sin contratos forzosos', doctory: true, doctoralia: false },
-  { feature: 'Dr. Simeón (referencia de pacientes)', doctory: true, doctoralia: false },
+  { feature: 'Verificación de cédula (SEP)', doctory: true, doctoralia: 'Según perfil' },
+  { feature: 'Captura por WhatsApp', doctory: 'Incluida según configuración', doctoralia: 'Según plan' },
+  { feature: 'Agenda y solicitudes de cita', doctory: true, doctoralia: true },
+  { feature: 'Flujo de seguimiento', doctory: 'Básico', doctoralia: 'Según plan' },
+  { feature: 'Sin contratos forzosos', doctory: true, doctoralia: 'Revisar condiciones' },
 ]
 
 const planComparison = [
   {
-    name: 'Esencial',
-    price: '$790',
-    cadence: 'MXN/mes',
-    cta: 'Comenzar gratis',
-    href: '/auth/register?role=doctor',
-    features: ['Perfil profesional', 'Reserva de citas', '30 pacientes WhatsApp', 'Soporte por correo'],
-  },
-  {
-    name: 'Profesional',
-    price: '$1,490',
+    name: 'Médico independiente',
+    price: '$499',
     cadence: 'MXN/mes',
     cta: 'Comenzar gratis',
     href: '/auth/register?role=doctor',
     featured: true,
-    features: [
-      'Todo en Esencial',
-      'AI Copilot (50 consultas)',
-      '100 pacientes WhatsApp',
-      'Posicionamiento prioritario',
-      'Análisis de imágenes (20)',
-    ],
+    features: ['Perfil profesional', 'Reserva de citas', 'Pacientes WhatsApp', 'Cédula verificada SEP', '14 días gratis'],
   },
   {
-    name: 'Premium',
-    price: '$2,990',
-    cadence: 'MXN/mes',
+    name: 'Anual',
+    price: '$5,000',
+    cadence: 'MXN/año',
     cta: 'Comenzar gratis',
     href: '/auth/register?role=doctor',
     features: [
-      'Todo en Profesional',
-      'AI Copilot ilimitado',
-      'Imágenes ilimitadas',
-      'Listado destacado',
-      'White label + API',
+      'Todo en mensual',
+      'Ahorro anual claro',
+      'Agenda y videoconsulta',
+      'Receta digital',
+      'Seguimiento básico',
+    ],
+  },
+  {
+    name: 'Clínicas y Enterprise',
+    price: 'Demo',
+    cadence: 'a la medida',
+    cta: 'Agendar demo',
+    href: '/contact?intent=clinic-demo',
+    features: [
+      'Equipos multi-sede',
+      'Flujos por WhatsApp',
+      'Reportes de captación',
+      'Acompañamiento comercial',
+      'Soporte prioritario',
     ],
   },
 ]
@@ -136,7 +134,7 @@ const faqs = [
   },
   {
     q: '¿Qué pasa si no tengo pacientes el primer mes?',
-    a: 'Te ayudamos a optimizar tu perfil para aparecer en búsquedas. Además, el Dr. Simeón refiere pacientes a médicos verificados.',
+    a: 'Te ayudamos a optimizar tu perfil para aparecer en búsquedas y capturar intención de pacientes. No prometemos volumen fijo sin revisar especialidad, ciudad y disponibilidad.',
   },
   {
     q: '¿Cómo funciona la verificación de cédula profesional?',
@@ -166,9 +164,9 @@ export default function ForDoctorsPage() {
   const [consultPrice, setConsultPrice] = useState(600)
 
   const monthlyRevenue = patientCount * consultPrice
-  const netRevenue = monthlyRevenue - 790
+  const netRevenue = monthlyRevenue - 499
   const doctoraliaCost = 2400
-  const annualSavings = (doctoraliaCost * 12) - (790 * 12)
+  const annualSavings = (doctoraliaCost * 12) - 5000
   const formatMxn = (amount: number) => `$${amount.toLocaleString('es-MX')}`
 
   return (
@@ -189,17 +187,16 @@ export default function ForDoctorsPage() {
                 Para médicos mexicanos
               </p>
               <h1 className="mt-4 font-display text-4xl font-semibold leading-[0.98] tracking-[-0.04em] text-foreground md:text-5xl lg:text-[3.4rem]">
-                Te enviamos 10 pacientes en tus primeros 30 días. Si no llegan, te regalamos 6 meses gratis.
+                Convierte tu perfil médico en un canal de captación medible por $499 MXN/mes.
               </h1>
               <p className="mt-4 max-w-xl text-base leading-7 text-muted-foreground">
-                Únete a la plataforma de telemedicina #1 para médicos mexicanos. Perfil
-                profesional, pacientes por WhatsApp, y IA para tus notas clínicas.
+                Construye un perfil verificable para captar pacientes en Doctor.mx: agenda, WhatsApp y herramientas de IA para operar con menos fricción.
               </p>
 
               <div className="mt-5 grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:gap-3">
                 {[
-                  '10 pacientes garantizados',
-                  '6 meses gratis si no cumplimos',
+                  'Captación medible',
+                  'Sin promesas infladas',
                   '14 días sin tarjeta',
                   'Cancela cuando quieras',
                 ].map((item) => (
@@ -297,7 +294,7 @@ export default function ForDoctorsPage() {
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-[0.12em] text-[hsl(var(--interactive))]">Tu ganancia neta</p>
                       <p className="mt-1 font-display text-2xl font-semibold text-[hsl(var(--interactive))]">{formatMxn(netRevenue)}</p>
-                      <p className="mt-0.5 text-xs text-muted-foreground">Después del plan Esencial ($790/mes)</p>
+                      <p className="mt-0.5 text-xs text-muted-foreground">Después del plan médico ($499/mes)</p>
                     </div>
                     <CreditCard className="h-8 w-8 text-primary/60" />
                   </div>
@@ -352,14 +349,13 @@ export default function ForDoctorsPage() {
                 ¿Por qué Doctor.mx?
               </p>
               <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-foreground">
-                Más funcionalidades por una fracción del precio
+                Una alternativa clara, verificable y de bajo riesgo para probar captación digital
               </h2>
               <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                Comparado con Doctoralia, ofrecemos más herramientas, verificación real de cédula y
-                precios hasta 80% menores.
+                Comparamos precio, verificación y herramientas operativas para que puedas medir si Doctor.mx cubre su costo con una consulta adicional.
               </p>
               <div className="mt-4 flex items-baseline gap-2">
-                <span className="font-display text-3xl font-semibold text-primary">$790</span>
+                <span className="font-display text-3xl font-semibold text-primary">$499</span>
                 <span className="text-sm text-muted-foreground line-through">$2,400</span>
                 <span className="text-xs text-muted-foreground">/mes</span>
               </div>
@@ -573,7 +569,7 @@ export default function ForDoctorsPage() {
           </h2>
           <p className="mt-3 text-base leading-7 text-muted-foreground">
             Sin tarjeta de crédito. Sin contratos forzosos. Completa tu perfil en minutos y empieza
-            a recibir pacientes verificados. Cancela cuando quieras.
+            a medir solicitudes reales después de la verificación. Cancela cuando quieras.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Button asChild size="lg">
@@ -592,7 +588,7 @@ export default function ForDoctorsPage() {
           <div className="mt-5 inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-2">
             <ShieldCheck className="h-4 w-4 text-primary" />
             <p className="text-xs text-muted-foreground">
-              Más de 2,500 médicos verificados ya confían en Doctor.mx
+              Publicamos perfiles médicos solo después de revisión y verificación profesional.
             </p>
           </div>
           <p className="mt-3 text-xs text-muted-foreground">
